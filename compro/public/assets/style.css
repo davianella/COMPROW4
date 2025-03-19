@@ -111,12 +111,11 @@ body {
 .calling-button {
     background-color: #ff214f;
     color: #f8f9fa;
-    font-size: 11px;
+    font-size: 14px;
     padding: 8px 22px;
     border-radius: 15px;
     text-decoration: none;
     transition: background-color 0.3s ease-in-out;
-    margin-right: 2%;
 }
 
 .calling-button:hover {
@@ -157,13 +156,16 @@ body {
     border-radius: 8px;
 }
 
-
-
-/* Responsive Dropdown */
-@media (max-width: 991px) { 
+/* 🔹 RESPONSIVE DESIGN 🔹 */
+@media (max-width: 1024px) { /* Tablet */
+    .navbar {
+        height: 75px;
+        padding: 0.5rem 1.5rem;
+    }
     .navbar .navbar-brand,
     .navbar .nav-link {
-        color: #0a1928 !important; /* Teks biru tua */
+        color: #0a1928 !important;
+        font-size: 20px;
     }
 
     .navbar-toggler-icon {
@@ -187,6 +189,75 @@ body {
         display: block;
     }
 }
+
+@media (max-width: 768px) { /* Mobile */
+    .navbar {
+        height: 70px;
+        padding: 0.5rem 1rem;
+    } 
+    
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: #0a1928 !important;
+        font-size: 20px;
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(1); /* Warna ikon toggle jadi putih */
+    }
+    .nav-item.dropdown {
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        width: 100%; 
+        background-color: transparent;
+    }
+
+    .nav-item.dropdown.show .dropdown-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) { /* Smartphone kecil */
+    .navbar {
+        height: 65px;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: #0a1928 !important;
+        font-size: 20px;
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(1); /* Warna ikon toggle jadi putih */
+    }
+    .nav-item.dropdown {
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        width: 100%; 
+        background-color: transparent;
+    }
+
+    .nav-item.dropdown.show .dropdown-menu {
+        display: block;
+    }
+}
+
 
 /* ==========================================
    CAROUSEL STYLING
