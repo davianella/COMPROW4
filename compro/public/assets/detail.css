@@ -1,0 +1,1001 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    background-color: #f8f9fa;
+    color: #0a1928;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Animasi FadeIn */
+.wow.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* ==========================================
+   NAVBAR STYLING
+========================================== */
+
+/* Navbar Default */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0.5rem 2rem;
+    background-color: rgba(255, 255, 255, 0); /* Transparan */
+    box-shadow: inset 0px 10px 10px -10px #f8f9fa;
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Warna teks saat navbar di awal */
+.navbar .navbar-brand,
+.navbar .nav-link {
+    font-weight: 600;
+    color: white !important; /* Putih */
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Navbar Scroll */
+.navbar.scrolled {
+    background-color: #f8f9fa; 
+    height: 70px;
+    margin: 20px auto;
+    width: 90%; 
+    padding: 0.5rem 2rem;
+    border-radius: 16px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Warna teks saat navbar di-scroll */
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+    color: #0a1928 !important; /* Biru Tua */
+}
+
+/* Hover effect saat navbar di-scroll */
+.navbar.scrolled .navbar-brand:hover {
+    color: #F85C70;
+}
+
+.navbar.scrolled .nav-link:hover,
+.navbar.scrolled .nav-link.active {
+    color: #ff214f;
+}
+
+.navbar.scrolled .nav-link::before {
+    background-color: #ff214f;
+}
+
+/* Logo Brand */
+.navbar-brand {
+    font-weight: 600;
+    font-size: 25px;
+    color: #ff214f;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: #F85C70;
+}
+
+/* Animasi Garis Bawah untuk Link */
+.nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #ff214f;
+    visibility: hidden;
+    transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Warna teks saat hover atau aktif */
+.nav-link:hover,
+.nav-link.active {
+    color: white; /* Putih */
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 100%;
+    visibility: visible;
+}
+
+/* Tombol Panggilan */
+.calling-button {
+    background-color: #ff214f;
+    color: #f8f9fa;
+    font-size: 14px;
+    padding: 8px 22px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.calling-button:hover {
+    background-color: #F85C70;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    min-width: 150px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+    display: block;
+    visibility: hidden;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0a1928; /* Biru Tua */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #ff214f;
+    color: white;
+    border-radius: 8px;
+}
+
+
+
+/* Responsive Dropdown */
+@media (max-width: 991px) { 
+    .navbar .navbar-brand,
+    .navbar .nav-link {
+        color: #0a1928 !important; /* Teks biru tua */
+    }
+
+    .navbar-toggler-icon {
+        filter: invert(1); /* Warna ikon toggle jadi putih */
+    }
+    .nav-item.dropdown {
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        width: 100%; 
+        background-color: transparent;
+    }
+
+    .nav-item.dropdown.show .dropdown-menu {
+        display: block;
+    }
+}
+/* Article Styles */
+.article-container {
+    background: white;
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.article-header {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.article-header img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.article-header h1 {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.article-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+}
+.article-meta .badge {
+    background: #ff214f;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.article-content p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+.article-content h3 {
+    color: #ff214f;
+    margin-top: 20px;
+}
+.article-content img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+/* ==========================================
+   HEADER STYLING
+========================================== */
+.page-header {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Sesuaikan tinggi header */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+}
+
+.page-header-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Responsive Font Sizes */
+.page-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        height: 250px; /* Sesuaikan tinggi di layar kecil */
+    }
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Breadcrumb Styling */
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.breadcrumb a {
+    color: #ff214f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.breadcrumb a:hover {
+    color: #ff214f; /* Warna hover */
+}
+
+.breadcrumb .active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   ACTIVITY STYLING
+========================================== */
+
+/* Styling Header */
+
+
+/* Container Grid */
+.activity-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+}
+
+/* Styling Card */
+.activity-item {
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Ukuran Gambar */
+.activity-img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Judul Aktivitas */
+.activity-title {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Background Bergantian */
+.activity-item:nth-child(odd) {
+    background-color: white;
+    color: black;
+}
+
+.activity-item:nth-child(even) {
+    background-color: #0a1928;
+    color: white;
+}
+/* Styling for the activity meta (date and category) */
+.activity-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #cf7272;
+}
+
+/* Styling for the activity date */
+.activity-date {
+    margin-right: 10px;
+}
+
+/* Styling for the activity category with background color */
+.activity-category {
+    background-color: #ff214f;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Styling for the "Selengkapnya" link with underline and arrow */
+.activity-btn {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 16px;
+    text-decoration: underline;
+    color: #ff214f;
+    cursor: pointer;
+}
+
+.activity-btn:hover {
+    color: #e5193a;
+}
+
+
+@media (max-width: 1024px) {
+    .activity-img {
+        height: 400px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .activity-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); /* 1 kolom untuk layar kecil */
+        gap: 10px;
+    }
+    .activity-img {
+        height: 300px; /* Ukuran lebih kecil untuk layar HP */
+    }
+}
+
+@media (max-width: 480px) {
+    .activity-img {
+        height: 200px; /* Lebih kecil untuk layar HP sangat kecil */
+    }
+}
+/* ==========================================
+   PRODUCT STYLING - RESPONSIVE FIX
+========================================== */
+
+/* Styling untuk bagian produk */
+.product-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Mencegah wrap di layar besar */
+    padding: 20px;
+    margin: 0 auto;
+    gap: 20px;
+    max-width: 1200px;
+}
+
+/* Mengubah urutan pada produk dengan class reverse */
+.product-detail.reverse {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse; /* Agar urutan berubah */
+}
+
+/* Kolom teks */
+.product-text {
+    width: 50%;
+    min-width: 300px;
+    flex: 1; /* Supaya proporsional */
+}
+
+.product-text h2 {
+    font-size: 28px;
+    color: #ff214f;
+    margin-bottom: 10px;
+}
+
+.product-text p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff214f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #d80e3b;
+}
+
+/* Kolom Gambar */
+.product-img {
+    width: 50%;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    flex: 1; /* Supaya proporsional */
+}
+
+.product-img img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Responsif */
+@media (max-width: 1024px) {
+    .product-detail {
+        flex-wrap: wrap; /* Masih dalam satu baris kecuali jika tidak cukup */
+        gap: 10px;
+    }
+
+    .product-text, .product-img {
+        width: 48%; /* Masih dalam satu baris pada layar sedang */
+    }
+}
+
+/* Untuk layar di bawah 768px (tablet & mobile) */
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column; /* Mengubah jadi atas-bawah */
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-text, .product-img {
+        width: 100%;
+    }
+
+    .product-text h2 {
+        font-size: 24px;
+    }
+
+    .product-text p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Untuk layar di bawah 480px (mobile kecil) */
+@media (max-width: 480px) {
+    .product-text h2 {
+        font-size: 20px;
+    }
+
+    .product-text p {
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* ==========================================
+   FOOTER STYLING
+========================================== */
+/* Footer Styles */
+.footer-menu {
+    background-color: #0a1928;
+    color: white;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.footer-menu .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 180px;
+    text-align: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ff214f;
+}
+
+.footer-logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.footer-col h5 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #ff214f;
+}
+
+.footer-col ul li a i {
+    font-size: 20px;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-col ul li a i:hover {
+    color: #ff214f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #0a1928;
+    color: white;
+    font-size: 14px;
+    border-top: 1px solid #ff214f;
+}
+
+/* ==========================================
+   ARTICLE STYLING
+========================================== */
+.article-container {
+    background: white;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+}.article-header {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start; 
+    gap: 10px; 
+}
+
+/* Judul */
+.article-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #0a1928 !important;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Gambar */
+.article-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
+
+/* Body */
+.article-body {
+    display: grid;
+    grid-template-columns: 15% 60% 25%;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    align-items: start;
+}
+
+/* Metadata */
+.article-meta {
+    font-size: 16px;
+    color: #444;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.article-meta .badge {
+    background: #ff214f;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.article-meta span {
+    display: block;
+    margin-bottom: 10px;
+}
+.article-meta .meta-title {
+    font-weight: bold;
+    font-size: 10px;
+    color: #222;
+}
+
+/* Content */
+.article-content {
+    line-height: 1.8;
+    font-size: 18px;
+    max-width: 100%; 
+}
+.article-content h1 {
+    font-size: 28px;
+    color: #222;
+    margin-bottom: 15px;
+}
+.article-content h3 {
+    color: #ff214f;
+    margin-top: 20px;
+    font-size: 22px;
+}
+.article-content img {
+    display: block;
+    margin: 20px auto;
+    max-width: 60%;
+    height: auto;
+    border-radius: 5px;
+}
+/* Kolom Kanan: Sidebar Artikel Terkait */
+.article-sidebar {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: fit-content; 
+    width: 90%;
+    box-sizing: border-box
+}
+
+.article-sidebar h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #0a1928;
+}
+.article-sidebar h4 a {
+    text-decoration: none;
+    color: #ff214f;
+    transition: color 0.3s;
+}
+
+.single-blog-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.single-blog-item-img img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.single-blog-item-txt h4 {
+    font-size: 14px;
+    max-width: 80%; 
+    margin: 0;
+    color: #0a1928;
+    text-decoration: none;
+}
+
+.single-blog-item-txt h6 {
+    font-size: 12px;
+    color: gray;
+    margin: 5px 0 0;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .article-body {
+        grid-template-columns: 1fr;
+    }
+    .article-sidebar {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .single-blog-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .single-blog-item-img img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* ==========================================
+   DETAIL ACT STYLING
+========================================== */
+
+.act-sidebar {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+.act-sidebar h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e5193a;
+    padding-bottom: 10px;
+  }
+  
+.single-act-item {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+  
+.single-act-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+.single-act-item-img img {
+    width: 30%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.single-act-item-txt h4 {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+.single-act-item-txt h4 a {
+    text-decoration: none;
+    color: #ff214f;
+    transition: color 0.3s;
+}
+  
+.single-act-item-txt h4 a:hover {
+    color: #ff214f;
+  }
+  
+.single-act-item-txt h6 {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 5px;
+  }
+  
+.detactivity-detail {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.detactivity-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #0a1928;
+}
+
+.detactivity-meta {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.detactivity-meta span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.detactivity-meta .badge{
+    background: #ff214f;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.detactivity-header {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.detactivity-img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.detactivity-body {
+    text-align: left;
+}
+
+.detactivity-description {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* ==========================================
+   DETAIL PRO STYLING
+========================================== */
+
+.detproduct-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    gap: 30px;
+}
+
+.detproduct-img {
+    flex: 1;
+    text-align: center;
+}
+
+.detproduct-img img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.detproduct-info {
+    flex: 1;
+    text-align: left;
+}
+
+.detproduct-name {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.detproduct-description {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.detproduct-specs {
+    list-style: none;
+    padding: 0; 
+}
+
+.detproduct-specs li {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
