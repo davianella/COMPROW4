@@ -101,29 +101,35 @@ if (!empty($categoriesAktivitas)) {
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                    <!-- Home -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2 active" aria-current="page" href="<?= base_url($lang . '/') ?>">
+                        <a class="nav-link mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'home' ? 'active' : '' ?>" 
+                           href="<?= base_url($lang . '/') ?>">
                             <?= lang('bahasa.home'); ?>
                         </a>
                     </li>
+                    <!-- About -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="<?= base_url($lang . '/' . $aboutLink) ?>">
+                        <a class="nav-link mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'about' ? 'active' : '' ?>" 
+                           href="<?= base_url($lang . '/' . $aboutLink) ?>">
                             <?= lang('bahasa.about'); ?>
                         </a>
                     </li>
+                    <!-- Produk -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="<?= base_url($lang . '/' . $productLink) ?>">
+                        <a class="nav-link mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'product' ? 'active' : '' ?>" 
+                           href="<?= base_url($lang . '/' . $productLink) ?>">
                             <?= lang('bahasa.product'); ?>
                         </a>
                     </li>
                     <!-- Dropdown Aktivitas -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="activityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'activity' ? 'active' : '' ?>" href="#" id="activityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= lang('bahasa.activity'); ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="activityDropdown">
                             <li><a class="dropdown-item" href="<?= base_url($lang . '/' . $activityLink) ?>">
-                                    <?= $lang == 'id' ? 'Semua Aktivitas' : 'All Activity'; ?>
+                                    <?= $lang == 'id' ? 'Semua Aktivitas' : 'All Activities'; ?>
                                 </a>
                             </li>
                             <?php if (!empty($kategoriAktivitasLinks)): ?>
@@ -141,7 +147,7 @@ if (!empty($categoriesAktivitas)) {
                     </li>
                     <!-- Dropdown Artikel -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="articlesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'article' ? 'active' : '' ?>" href="#" id="articlesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= lang('bahasa.article'); ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="articlesDropdown">
@@ -162,11 +168,14 @@ if (!empty($categoriesAktivitas)) {
                             <?php endif; ?>
                         </ul>
                     </li>
+                    <!-- Kontak -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2" href="<?= base_url($lang . '/' . $contactLink) ?>">
+                        <a class="nav-link mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'contact' ? 'active' : '' ?>" 
+                           href="<?= base_url($lang . '/' . $contactLink) ?>">
                             <?= lang('bahasa.contact'); ?>
                         </a>
                     </li>
+                    <!-- Pilihan Bahasa -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle mx-lg-2" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= ($lang === 'en') ? 'English' : 'Indonesia'; ?>
