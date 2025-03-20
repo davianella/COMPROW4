@@ -31,7 +31,6 @@
             <div class="product-detail <?= ($index % 2 !== 0) ? 'reverse' : ''; ?> wow fadeIn">
             <div class="product-text">
                 <h2><?= esc($product['nama_produk_' . $lang] ?? $product['nama_produk_id']) ?></h2>
-
                 <?php
                 // Ambil deskripsi sesuai bahasa yang dipilih, fallback ke bahasa default (ID)
                 $deskripsi = strip_tags($product['deskripsi_produk_' . $lang] ?? $product['deskripsi_produk_id']);
@@ -45,7 +44,7 @@
 
                 <p style="font-size: 20px"><?= esc($potongan, 'raw') ?></p>
 
-                <a href="<?= base_url('produk/' . esc($product['slug_' . $lang] ?? $product['slug_id'])) ?>" class="btn">
+                <a href="<?= base_url(trim($lang . '/' . $productLink . '/' . $product['slug_' . $lang], '/')) ?>" class="btn">
                     <?= lang('bahasa.buttonProduk') ?>
                 </a>
             </div>

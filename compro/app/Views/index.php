@@ -159,7 +159,7 @@
                 </div>
 
                 <div class="text-center mt-4">
-                    <a href="<?= base_url('products') ?>" class="btn btn-primary btn-lg"><?= ($lang === 'id') ? 'Produk Lainnya →' : 'Other Products →' ?> </a>
+                <a href="<?= base_url($lang . '/' . ($productLink ?? 'produk')) ?>" class="btn btn-primary btn-lg"><?= ($lang === 'id') ? 'Produk Lainnya →' : 'Other Products →' ?> </a>
                 </div>
             </div>
         </div>

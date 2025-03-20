@@ -21,7 +21,7 @@
 
 <div id="about" class="text-center wow fadeIn">
     <h6 class="text-uppercase" style="color: #ff214f;">>><?= lang('bahasa.headerAbout') ?><<</h6>
-    <h1 class="mb-5"><?= lang('bahasa.deskripsiAbout') ?></h1>
+    <h1 class="mb-5"><?= ($lang === 'id') ? 'Lebih lanjut tentang kami' : 'More About Us' ?></h1>
 </div>
 
 <!-- About Start -->
@@ -30,7 +30,7 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 order-lg-1 order-2">
                 <h6 class="text-primary text-uppercase" style ="font-size: 25px";>
-                    <?= ($lang === 'id') ? 'Lebih lanjut tentang kami' : 'More About Us' ?>
+                    <?= lang('bahasa.deskripsiAbout') ?>
                 </h6>
                 <h1 class="mb-4" style ="font-size: 60px";><?= esc($profil['nama_perusahaan'] ?? 'Perusahaan') ?></h1>
                 <p  style ="font-size: 20px"><?= esc($profil['deskripsi_perusahaan_' . $lang] ?? 'Deskripsi tidak tersedia') ?></p>

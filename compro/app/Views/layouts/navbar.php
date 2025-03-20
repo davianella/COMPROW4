@@ -196,7 +196,7 @@ if (!empty($categoriesAktivitas)) {
                 </ul>
             </div>
         </div>
-        <a href="<?= base_url($lang . '/' . $contactLink) ?>" class="calling-button">Hubungi Kami</a>
+        <a href="<?= base_url($lang . '/' . $contactLink) ?>" class="calling-button"><?= ($lang === 'id') ? 'Hubungi Kami' : 'Get Touch' ?></a>
         <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
