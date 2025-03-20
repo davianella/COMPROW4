@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <!-- Page Header Start -->
-<div class="container-fluid page-header mb-5 p-0" style="background-image: url('<?= base_url('assets/img/header.jpg') ?>');">
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url(<?= base_url('assets/img/header.jpg') ?>);">
     <div class="container-fluid page-header-inner py-5">
         <div class="container text-center">
             <h1 class="display-3 text-white mb-3 animated slideInDown"><?= lang('bahasa.about') ?></h1>
@@ -19,9 +19,9 @@
 </div>
 <!-- Page Header End -->
 
-<div id="activity" class="text-center wow fadeIn">
-    <h6 class="text-uppercase" style="color: #ff214f;"> >><?= ($lang === 'id') ? 'Tentang Kami' : 'About Us' ?><< </h6>
-    <h1 class="mb-2"><?= lang('bahasa.headerAbout') ?></h1>
+<div id="about" class="text-center wow fadeIn">
+    <h6 class="text-uppercase" style="color: #ff214f;">>><?= lang('bahasa.headerAbout') ?><<</h6>
+    <h1 class="mb-5"><?= lang('bahasa.deskripsiAbout') ?></h1>
 </div>
 
 <!-- About Start -->

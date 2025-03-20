@@ -133,7 +133,7 @@
             <div class="ms-lg-5 ps-lg-5">
                 <!-- Header -->
                 <div class="text-center text-lg-start">
-                    <h6 class="text-primary text-uppercase"> >><?= lang('bahasa.headerProduk') ?><<</h6>
+                    <h6 class="text-primary text-uppercase">>><?= lang('bahasa.headerProduk') ?><<</h6>
                     <h1 class="mb-4"><?= lang('bahasa.captionProduk') ?></h1>
                 </div>
 
@@ -144,11 +144,11 @@
                                 <div class="product-item">
                                     <div class="product-img-home">
                                         <img src="<?= base_url('assets/img/produk/' . esc($item['foto_produk'])) ?>" 
-                                            alt="<?= esc($item['alt_produk_id']) ?>">
+                                            alt="<?= esc($item['alt_produk_' . $lang] ?? $item['alt_produk_id']) ?>">
                                     </div>
                                     <div class="product-content">
-                                        <h5><?= esc($item['nama_produk_id']) ?></h5>
-                                        <a href="<?= base_url('produk/' . esc($item['slug_id'])) ?>" class="btn btn-product">
+                                        <h5><?= esc($item['nama_produk_' . $lang] ?? $item['nama_produk_id']) ?></h5>
+                                        <a href="<?= base_url('produk/' . esc($item['slug_' . $lang] ?? $item['slug_id'])) ?>" class="btn btn-product">
                                         <?= ($lang === 'id') ? 'Info Lengkap' : 'More Info' ?>  <i class="fa fa-arrow-right ms-2"></i>
                                         </a>
                                     </div>

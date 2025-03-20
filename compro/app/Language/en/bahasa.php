@@ -35,7 +35,8 @@ return [
 
     // ABOUT MENU
     'titleAbout' => 'MORE ABOUT US',
-    'headerAbout' => 'Empowering Your Digital Journey',
+    'headerAbout' => 'ABOUT US',
+    'deskripsiAbout' => 'Empowering Your Digital Journey',
     'call' => 'Call us anytime',
     'poin1' => 'Stunning Website Design',
     'poin2' => 'Strong Branding Strategy',
@@ -63,6 +64,7 @@ return [
     // PRODUK MENU
     'headerProduk' => 'Our Products',
     'captionProduk' => 'Discover Our Best Products',
+    'buttonProduk' =>'click for description',
 
     // ACTIVITY
     'headerActivity' => 'Our Activity',

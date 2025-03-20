@@ -34,8 +34,9 @@ return [
     'headerSlider' => 'Selamat datang di Creativenest',
 
     // ABOUT MENU
+    'headerAbout' =>'TENTANG KAMI',
     'titleAbout' => 'LEBIH LANJUT TENTANG KAMI',
-    'headerAbout' => 'Memberdayakan Perjalanan Digital Anda',
+    'deskripsiAbout' => 'Memberdayakan Perjalanan Digital Anda',
     'call' => 'Hubungi kami kapan saja',
     'poin1' => 'Desain Website yang Memukau',
     'poin2' => 'Strategi Branding yang Kuat',
@@ -63,6 +64,7 @@ return [
     // PRODUK MENU
     'headerProduk' => 'Produk Kami',
     'captionProduk' => 'Temukan Produk Terbaik Kami',
+    'buttonProduk' =>'klik untuk deskripsi',
 
     // ACTIVITY
     'headerActivity' => 'Aktivitas Kami',
