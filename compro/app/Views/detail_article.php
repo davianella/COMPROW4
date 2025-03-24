@@ -61,19 +61,19 @@ $background_image = 'assets/img/header.jpeg';
       <!-- Kolom Kiri: Metadata -->
       <aside class="article-sidebar left-sidebar">
         <div class="article-meta">
-          <span class="badge"><?= $lang == 'id' ? esc($artikel['nama_kategori_id']) : esc($artikel['nama_kategori_en']); ?></span>
-          <span class="meta-title">Kontributor: Admin</span>
-          <span class="meta-title">Tanggal Publish: <?= date('d M Y', strtotime($artikel['updated_at'])); ?></span>
+          <span class="meta-badge"><?= $lang == 'id' ? esc($artikel['nama_kategori_id']) : esc($artikel['nama_kategori_en']); ?></span>
+          <span class="meta-title"><?= lang('bahasa.postedBy') ?>:</span> <span> Admin</span>
+          <span class="meta-title"><?= lang('bahasa.publish_date') ?>:</span> <span> <?= date('d M Y', strtotime($artikel['updated_at'])); ?></span>
         </div>
       </aside>
 
       <div class="article-content">
-        <p><?= $lang == 'id' ? esc($artikel['deskripsi_artikel_id']) : esc($artikel['deskripsi_artikel_en']); ?></p>
+        <p><?= $lang == 'id' ? $artikel['deskripsi_artikel_id'] : $artikel['deskripsi_artikel_en']; ?></p>
       </div>
 
       <!-- Kolom Kanan: Artikel Sidebar -->
       <aside class="article-sidebar right-sidebar">
-        <h3 class="mb-4" style="border-bottom: 2px solid #ff214f;">Artikel Terkait</h3>
+        <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;">Artikel Terkait</h3>
 
         <?php foreach ($allArticle as $p): ?>
           <div class="blog-sidebar">

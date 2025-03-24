@@ -51,15 +51,17 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
 
 
 <!-- About Start -->
-<div class="container-xxl py-5 mb-5 wow fadeIn">
+<div class="container-xxl py-5 mb-5 mt-5 wow fadeIn" style="border-radius: 20px;">
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 order-lg-1 order-2">
-                <h6 class="text-primary text-uppercase" style ="font-size: 25px";>
-                    <?= lang('bahasa.deskripsiAbout') ?>
+                <h6 class="text-primary text-uppercase text-center text-lg-start" style ="font-size: 20px";>
+                    <?= lang('bahasa.titleAbout') ?>
                 </h6>
-                <h1 class="mb-4" style ="font-size: 60px";><?= esc($profil['nama_perusahaan'] ?? 'Perusahaan') ?></h1>
-                <p  style ="font-size: 20px"><?= esc($profil['deskripsi_perusahaan_' . $lang] ?? 'Deskripsi tidak tersedia') ?></p>
+                <h1 class="mb-4 text-center text-lg-start">
+                    <?= esc($profil['nama_perusahaan'] ?? 'Perusahaan') ?>
+                </h1>
+                <p  style ="font-size: 20px"><?= isset($profil['deskripsi_perusahaan_' . $lang]) ? $profil['deskripsi_perusahaan_' . $lang] : 'Deskripsi tidak tersedia'; ?></p>
             </div>
             <div class="col-lg-6 order-lg-2 order-1">
                 <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
@@ -68,7 +70,8 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
                          style="object-fit: cover; border-radius: 30px;" 
                          alt="<?= esc($profil['alt_foto_perusahaan_' . $lang] ?? 'Company Image') ?>">
                     <div class="position-absolute top-50 start-0 translate-middle-y ms-n4 py-4 px-5 bg-dark opacity-75 text-white" style="border-radius: 10px;">
-                        <h1 class="display-4 mb-0">BDICAM</h1>
+                    <h1 class="display-4 mb-0">INDONESIAN</h1>
+                    <h1 class="display-4 mb-0">EXPORTER</h1>
                     </div>
                 </div>
             </div>

@@ -51,28 +51,34 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
       <h6 class="sub-title">>><?= $lang == 'id' ? $meta['nama_halaman_id'] : $meta['nama_halaman_en']; ?><<</h6>
       <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
     </div>
-      <div class="blog-content">
-        <div class="row">
-          <div class="col-md-8 col-sm-12">
-            <?php foreach ($allArticle as $article): ?>
-              <div class="single-blog-item">
-                <div class="single-blog-item-img">
-                  <img src="<?= base_url('assets/img/artikel/' . $article["foto_artikel"]) ?>" class="card-img-top" alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>">
-                </div>
-                <div class="single-blog-item-txt">
-                  <h2><a href="#"><?= $lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']; ?></a></h2>
-                  <h4>Diposting oleh Admin <span>||</span> <?= date('d M Y', strtotime($article['updated_at'])); ?></h4>
-                  <h5><span class="badge"><?= $lang == 'id' ? $article['nama_kategori'] : $article['nama_kategori']; ?></span></h5>
-                  <p><?= $lang == 'id' ? $article['snippet_id'] : $article['snippet_en']; ?></p>
-                  <a href="<?= base_url(
-                              $lang === 'id'
-                                ? 'id/artikel/' . ($article['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($article['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
-                                : 'en/article/' . ($article['slug_kategori_en'] ?? 'category-not-found') . '/' . ($article['slug_artikel_en'] ?? 'article-not-found')
-                            ); ?>" class="activity-btn">Baca Selengkapnya <i class="fa fa-arrow-right ms-3"></i></a>
-                </div>
+    <div class="blog-content">
+      <div class="row">
+        <div class="col-md-8 col-sm-12">
+          <?php foreach ($allArticle as $article): ?>
+            <div class="single-blog-item">
+              <div class="single-blog-item-img">
+                <img src="<?= base_url('assets/img/artikel/' . $article["foto_artikel"]) ?>" class="card-img-top" alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>">
               </div>
-            <?php endforeach; ?>
-
+              <div class="single-blog-item-txt">
+                <h2><a href="<?= base_url(
+                            $lang === 'id'
+                              ? 'id/artikel/' . ($article['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($article['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                              : 'en/article/' . ($article['slug_kategori_en'] ?? 'category-not-found') . '/' . ($article['slug_artikel_en'] ?? 'article-not-found')
+                          ); ?>"><?= $lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']; ?></a></h2>
+                <div>
+                  <h4><span class="badge">
+                    <?= $lang == 'id' ? $article['nama_kategori'] : $article['nama_kategori']; ?>
+                    </span> - <?= date('d M Y', strtotime($article['updated_at'])); ?></h4>
+                </div>
+                <p><?= $lang == 'id' ? $article['snippet_id'] : $article['snippet_en']; ?></p>
+                <a href="<?= base_url(
+                            $lang === 'id'
+                              ? 'id/artikel/' . ($article['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($article['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                              : 'en/article/' . ($article['slug_kategori_en'] ?? 'category-not-found') . '/' . ($article['slug_artikel_en'] ?? 'article-not-found')
+                          ); ?>" class="article-btn"><?= lang('bahasa.buttonArticle') ?><i class="fa fa-arrow-right ms-3"></i></a>
+              </div>
+            </div>
+          <?php endforeach; ?>
             <div class="pagination-container">
               <nav>
                 <ul class="pagination">
@@ -80,24 +86,26 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
                   <li><a href="#" class="pagination-btn">2</a></li>
                   <li><a href="#" class="pagination-btn">3</a></li>
                   <li><a href="#" class="pagination-btn">&raquo;</a></li>
-                  <li><a href="#" class="pagination-btn">Terakhir</a></li>
+                  <li><a href="#" class="pagination-btn"><?= lang('bahasa.last') ?></a></li>
                 </ul>
               </nav>
             </div>
           </div>
           <div class="col-md-4 col-sm-12">
             <aside class="article-sidebar right-sidebar">
-              <h3 class="mb-4" style="border-bottom: 2px solid #ff214f;">Artikel Terkait</h3>
+              <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;">Artikel Terkait</h3>
 
               <?php foreach ($sideArticle as $p): ?>
                 <div class="blog-sidebar">
-                  <div class="single-blog-item-img">
-                    <img src="<?= base_url('assets/img/artikel/' . $p["foto_artikel"]) ?>" class="card-img-top" alt="<?= $lang == 'id' ? $p['alt_artikel_id'] : $p['alt_artikel_en']; ?>" alt="blog image">
+                <div class="single-blog-item-img" style="width: 80px; height: 80px; overflow: hidden; border-radius: 5px;">
+                  <img src="<?= base_url('assets/img/artikel/' . esc($p['foto_artikel'])) ?>" class="img-fluid" alt="<?= esc($p['alt_artikel_' . $lang] ?? 'Gambar tidak tersedia') ?>">
                   </div>
-                  <div class="single-blog-item-txt">
-                    <h4><?= $lang == 'id' ? $p['judul_artikel_id'] : $p['judul_artikel_en']; ?></h4>
-                    <h6><?= date('d M Y', strtotime($p['updated_at'])); ?></h6>
-                  </div>
+                    <div class="single-blog-item-txt ms-3">
+                      <h4><a href="<?= base_url('artikel/' . esc($p['slug_artikel_' . $lang] ?? $p['slug_artikel_id'])) ?>">
+                        <?= esc($p['judul_artikel_' . $lang] ?? 'Judul tidak tersedia') ?>
+                      </a></h4>
+                      <h6 class="text-muted"><?= date('F Y', strtotime($p['created_at'])) ?></h6>
+                    </div>
                 </div>
               <?php endforeach; ?>
             </aside>

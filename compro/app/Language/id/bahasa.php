@@ -14,6 +14,8 @@ return [
     'sideArtikel'=> 'Artikel Terkait',
     'zeroArtikel' => 'Tidak ada artikel yang tersedia',
     'postedBy'=> 'Diunggah Oleh',
+    'publish_date' => 'Tanggal Diunggah',
+    
 
     // FOOTER
     'headerService' => 'Artikel Kami',
@@ -29,18 +31,13 @@ return [
     'activity' => 'Aktivitas',
     'product' => 'Produk',
 
-    // SLIDER
-    'buttonSlider' => 'Kontak Kami',
-    'headerSlider' => 'Selamat datang di Creativenest',
-
     // ABOUT MENU
     'headerAbout' =>'TENTANG KAMI',
     'titleAbout' => 'LEBIH LANJUT TENTANG KAMI',
-    'deskripsiAbout' => 'Memberdayakan Perjalanan Digital Anda',
 
     // KONTAK MENU
     'headerKontak' => 'Kontak Kami',
-    'deskripsiKontak' => 'Hubungi Kami untuk Membahas Solusi Digital Anda',
+    'deskripsiKontak' => 'Hubungi Kami untuk Meningkatkan Bisnis Ekspor Anda dengan Solusi Digital yang Tepat',
 
     // PRODUK MENU
     'headerProduk' => 'Produk Kami',

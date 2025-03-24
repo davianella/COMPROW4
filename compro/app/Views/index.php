@@ -96,12 +96,12 @@
                     <?= esc($profil['nama_perusahaan'] ?? 'Perusahaan') ?>
                 </h1>
                 <?php
-                $deskripsi = esc($profil['deskripsi_perusahaan_' . $lang] ?? 'Deskripsi tidak tersedia');
+                $deskripsi = isset($profil['deskripsi_perusahaan_' . $lang]) ? $profil['deskripsi_perusahaan_' . $lang] : 'Deskripsi tidak tersedia';
                 $kalimat = preg_split('/(?<=[.!?])\s+/', $deskripsi, 4, PREG_SPLIT_NO_EMPTY);
                 $deskripsi_pendek = implode(' ', array_slice($kalimat, 0, 2)) . (count($kalimat) > 2 ? '..' : '');
                 ?>
 
-                <p class="text-justify" style="font-size: 20px; text-align: justify;">
+                <p class="text-justify" style="text-align: justify;">
                     <?= $deskripsi_pendek ?>...
                 </p>
                 <div class="btn-wrapper">
@@ -211,17 +211,25 @@
             <div class="activity-item">
                 <img src="<?= base_url('assets/img/aktivitas/' . esc($item['foto_aktivitas'])) ?>" 
                      alt="<?= esc($item['judul_aktivitas_id']) ?>" class="activity-img">
-                <a href="#" class="activity-overlay">
-                    <h5><?= esc($item['judul_aktivitas_' . $lang] ?? 'Judul tidak tersedia') ?></h5>
-                </a>
+                     <a href="<?= base_url(
+                        $lang === 'id'
+                        ? 'id/aktivitas/' . ($item['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($item['slug_aktivitas_id'] ?? 'aktivitas-tidak-ditemukan')
+                        : 'en/activity/' . ($item['slug_kategori_en'] ?? 'category-not-found') . '/' . ($item['slug_aktivitas_en'] ?? 'activity-not-found')
+                    ); ?>" class="activity-overlay">
+                        <h5><?= esc($item['judul_aktivitas_' . $lang] ?? 'Judul tidak tersedia') ?></h5>
+                    </a>
             </div>
     <?php
         endfor;
     }
     ?>
+    <div></div>
+    <div class="activity-container text-center mt-1">
+    <a href="<?= base_url(trim($lang . '/' . ($lang === 'id' ? 'aktivitas' : 'activity'), '/')) ?>" class="activity-button">
+        <?= ($lang === 'id') ? 'Semua Aktivitas →' : 'All Activities →' ?>
+    </a>
+
 </div>
-<div class="activity-container text-center mt-1">
-    <a href="<?= base_url('activity') ?>" class="btn btn-primary btn-lg"><?= ($lang === 'id') ? 'Semua Aktivitas →' : 'All Activities →' ?> </a>
 </div>
 <!-- Activity End -->
 
@@ -241,24 +249,30 @@
                             <?php if ($index == 0) : ?> <!-- Artikel utama hanya satu -->
                                 <div class="single-blog-item">
                                     <div class="single-blog-item-img">
-                                        <img src="<?= base_url('assets/img/artikel/' . esc($item['foto_artikel'])) ?>" class="img-fluid" alt="<?= esc($item['alt_artikel_id']) ?>">
+                                        <img src="<?= base_url('assets/img/artikel/' . esc($item['foto_artikel'])) ?>" alt="<?= esc($item['alt_artikel_id']) ?>">
                                     </div>
                                     <div class="single-blog-item-txt">
+                                            <div>
+                                                <h4><span class="badge">
+                                                    <?= $lang == 'id' ? $item['nama_kategori'] : $item['nama_kategori']; ?>
+                                                </span> - </span> <?= date('F Y', strtotime($item['created_at'])) ?></h4>
+                                            </div>
                                         <h2>
-                                            <a href="<?= base_url('artikel/' . esc($item['slug_artikel_' . $lang] ?? $item['slug_artikel_id'])) ?>">
+                                            <a href="<?= base_url(
+                                                $lang === 'id'
+                                                    ? 'id/artikel/' . ($item['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($item['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                                                    : 'en/article/' . ($item['slug_kategori_en'] ?? 'category-not-found') . '/' . ($item['slug_artikel_en'] ?? 'article-not-found')
+                                                ); ?>">
                                                 <?= esc($item['judul_artikel_' . $lang] ?? $item['judul_artikel_id']) ?>
                                             </a>
                                         </h2>
-                                        <h4>
-                                            <?= lang('bahasa.postedBy') ?> Admin <span>||</span> <?= date('F Y', strtotime($item['created_at'])) ?>
-                                        </h4>
-                                        <h5>
-                                            <span class="badge">
-                                                <?= !empty($item['slug_kategori_' . $lang]) ? esc(strtoupper($item['slug_kategori_' . $lang])) : 'TANPA KATEGORI' ?>
-                                            </span>
-                                        </h5>
+                                            
                                         <p><?= esc($item['snippet_' . $lang] ?? $item['snippet_id']) ?></p>
-                                        <a href="<?= base_url('artikel/' . esc($item['slug_artikel_' . $lang] ?? $item['slug_artikel_id'])) ?>" class="article-btn">
+                                        <a href="<?= base_url(
+                                                $lang === 'id'
+                                                    ? 'id/artikel/' . ($item['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($item['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                                                    : 'en/article/' . ($item['slug_kategori_en'] ?? 'category-not-found') . '/' . ($item['slug_artikel_en'] ?? 'article-not-found')
+                                                ); ?>" class="article-btn">
                                             <?= lang('bahasa.buttonArticle') ?><i class="fa fa-arrow-right ms-3"></i>
                                         </a>
                                     </div>
@@ -272,7 +286,7 @@
 
                 <!-- Sidebar Artikel Terkait -->
                 <div class="col-md-4 col-sm-12">
-                    <aside class="article-sidebar right-sidebar bg-white">
+                    <aside class="article-sidebar">
                         <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;"><?= lang('bahasa.sideArticle') ?></h3>
                         <?php if (!empty($sideArtikel) && count($sideArtikel) > 1) : ?>
                             <?php foreach (array_slice($sideArtikel, 1) as $item) : ?>

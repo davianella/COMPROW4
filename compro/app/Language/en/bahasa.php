@@ -14,6 +14,7 @@ return [
     'sideArticle' => 'Related Articles',
     'zeroArticle' => 'No articles available',
     'postedBy'=> 'Posted By',
+    'publish_date' => 'Publish Date',
 
     // FOOTER
     'headerService' => 'Our Article',
@@ -36,6 +37,8 @@ return [
 
     // KONTAK MENU
     'headerKontak' => 'Contact Us',
+    'deskripsiKontak' => 'Contact Us to Boost Your Export Business with the Right Digital Solutions',
+
 
     // PRODUK MENU
     'headerProduk' => 'Our Products',

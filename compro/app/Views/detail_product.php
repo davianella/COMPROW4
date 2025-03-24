@@ -57,7 +57,7 @@ $background_image = 'assets/img/header.jpeg';
     <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
 </div>
 
-<div class="detproduct-detail">
+<div class="detproduct-detail" style="background-color:white; border-radius:20px; padding:20px;">
     <div class="detproduct-img">
         <img src="<?= base_url('assets/img/produk/' . esc($product['foto_produk'])) ?>" alt="<?= esc($product['nama_produk_' . $lang] ?? $product['nama_produk_id']) ?>">
     </div>
@@ -67,7 +67,7 @@ $background_image = 'assets/img/header.jpeg';
         </p>
     </div>
 </div>
-<div class="text-center mt-4 mb-5">
+<div class="text-center mt-4 mb-5 ">
     <a href="<?= base_url($lang . '/' . ($productLink ?? 'produk')) ?>" class="btn btn-primary btn-lg"><?= ($lang === 'id') ? 'Kembali' : 'Back' ?> </a>
 </div>
 

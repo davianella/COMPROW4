@@ -434,7 +434,7 @@ img.img-fluid {
         padding: 8px;
     }
     .carousel-caption h1 {
-        font-size: 28px;
+        font-size: 20px;
     }
     .carousel-caption p {
         font-size: 14px;
@@ -514,13 +514,11 @@ img.img-fluid {
     font-weight: bold;
 }
 
-/* ✅ Universal Title Page Styling */
 .title-page {
     text-align: center;
     padding: 10px;
 }
 
-/* ✅ Styling untuk subjudul */
 .title-page .sub-title {
     font-size: 16px;
     font-weight: bold;
@@ -529,13 +527,12 @@ img.img-fluid {
     margin-bottom: 10px;
 }
 
-/* ✅ Styling untuk judul utama */
 .title-page h1 {
     font-size: 25px;
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
-    word-wrap: break-word; /* Memastikan teks panjang tetap dalam area */
+    word-wrap: break-word; 
     overflow-wrap: break-word;
     text-align: center;
     max-width: 80%;
@@ -543,7 +540,6 @@ img.img-fluid {
     line-height: 1.5;
 }
 
-/* ✅ Responsif untuk layar kecil */
 @media (max-width: 768px) {
     .title-page h1 {
         font-size: 18px;
@@ -568,7 +564,7 @@ img.img-fluid {
     background-color: white;
     margin: 0 auto 20px auto;
     border-radius: 0 0 30px 30px; /* Radius hanya di bagian bawah */
-    max-width: 1200px;
+    max-width: 1300px;
     text-align: center;
 }
 
@@ -592,7 +588,6 @@ p {
 /* Tombol */
 .btn-about {
     border: 2px solid #7b7b1a; 
-    font-weight: 600;
     padding: 12px 24px;
     font-size: 1rem;
     transition: all 0.3s ease-in-out;
@@ -601,6 +596,7 @@ p {
     color: #7b7b1a;
     text-decoration: none;
     margin-left: 0;
+    font-weight: bold;
 }
 
 .btn-about:hover {
@@ -808,7 +804,7 @@ p {
 }
 
 #activity h2 {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -856,7 +852,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 20px;
     color: white; 
     text-decoration: none;
     transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
@@ -884,20 +880,21 @@ p {
 
 /* Tombol */
 .activity-button {
-    display: inline-block;
-    background-color: darkgray;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
+    border: 2px solid #7b7b1a; 
+    font-weight: 600;
     padding: 12px 24px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px; 
+    display: inline-block; 
+    color: #7b7b1a;
     text-decoration: none;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-left: 0;
 }
 .activity-button:hover {
-    color: #7b7b1a;
+    background-color: #61610b;
+    transform: scale(1.05); 
+    color: white; 
 }
 
 /* RESPONSIVENESS */
@@ -1022,7 +1019,7 @@ p {
 }
 
 .product-section .text-lg-start h1 {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     color: #333;
 }
@@ -1069,6 +1066,11 @@ p {
     font-weight: bold;
     color: #333;
     margin: 15px 0;
+}
+.product-text h2 {
+    font-size: 30px;
+    margin-bottom: 15px; 
+    font-weight: bold;
 }
 
 /* Tombol produk */
@@ -1157,47 +1159,68 @@ p {
    ARTICLES STYLING
 ========================================== */
 
-.section-header {
-    font-size: 28px;
-    font-weight: bold;
-    text-transform: capitalize;
-    color: #333;
-    text-align: center; /* Memastikan judul di tengah */
-    width: 100%;
-}
-.badge {
-    display: inline-block;
-    padding: 5px 12px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    color: white;
-    background-color: #7b7b1a;
-    margin-top: 3%;
-}
-
-
 .single-blog-item {
-    background: white;
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 10px;
     overflow: visible; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch; /* Memastikan elemen mengambil lebar penuh */
     height: auto;
+}
+/* Flexbox container */
+.single-blog-item-txt div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.single-blog-item .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    background-color: #7b7b1a;
+    margin-top: 0; 
+}
+
+.single-blog-item .single-blog-item-txt h4 {
+    font-size: 10px;
+    font-weight: bold;
+    color: #888;
+    padding: 0;
+    margin: 0; 
+}
+
+.badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    background-color: #7b7b1a;
+}
+
+.single-blog-item .single-blog-item-img {
+    width: 100%; 
 }
 
 .single-blog-item .single-blog-item-img img {
     padding: 20px;
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .single-blog-item .single-blog-item-txt {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .single-blog-item-txt h2 a {
@@ -1217,17 +1240,15 @@ p {
     color: #0a1928;
 }
 
-.single-blog-item-txt h4 {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 10px;
-}
 
 .single-blog-item-txt p {
-    font-size: 16px;
+    font-size: 20px;
     color: #555;
     line-height: 1.6;
+    margin-top: 10px; /* Added margin-top for spacing */
+    padding: 0;
 }
+
 
 /* Sidebar (kanan) */
 .blog-sidebar{
@@ -1235,7 +1256,7 @@ p {
     gap: 2%;
     margin-bottom: 10%;
     align-items: center;
-    background-color: white;
+    background-color: transparent;
 }
 .blog-sidebar .single-blog-item {
     display: flex;
@@ -1365,6 +1386,8 @@ p {
 
     .single-blog-item-txt p {
         font-size: 14px;
+        margin-left: 0;
+        padding-bottom: 5px;
     }
 }
 
@@ -1373,8 +1396,11 @@ p {
 ========================================== */
 /* CONTACT SECTION */
 #contact {
-    color: #0a1928;
-    padding: 50px 0;
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto 0 auto;
+    border-radius: 30px 30px 0 0; /* Radius hanya di bagian atas */
+    max-width: 1300px;
 }
 
 #contact h3 {
@@ -1391,26 +1417,24 @@ p {
 }
 
 
+.text-muted {
+    color: #6c757d; /* Light grey color for text */
+    font-size: 14px; /* Adjust font size */
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
 .text-muted p {
-    font-size: 14px;
-    color: whitefff;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 2;
+    margin: 5px 0;
 }
 
-.text-muted p span {
+.text-muted a {
     color: #0a1928;
-    font-size: 18px;
-    margin-right: 10px;
+    text-decoration: none;
 }
 
-/* Icon Styling */
-.text-muted p i {
-    color: #0a1928;
-    font-size: 20px;
-    margin-right: 10px;
+.text-muted a:hover {
+    text-decoration: underline;
 }
 
 /* Map Styling */
@@ -1435,10 +1459,11 @@ p {
         padding: 20px;
     }
     .text-muted p {
-        font-size: 13px;
+        font-size: 12px; /* Smaller font on smaller screens */
     }
-    .text-muted p i {
-        font-size: 18px;
+    
+    .text-muted i {
+        margin-right: 8px; /* Add space between icon and text */
     }
 }
 
@@ -1604,10 +1629,16 @@ p {
 /* Mengubah urutan pada produk dengan class reverse */
 .product-detail.reverse {
     background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    padding: 20px;
     display: flex;
-    flex-direction: row-reverse; /* Agar urutan berubah */
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Mencegah wrap di layar besar */
+    padding: 20px;
+    margin: 0 auto;
+    gap: 20px;
+    max-width: 1200px;
+    flex-direction: row-reverse; 
+    border-radius: 15px;/* Agar urutan berubah */
 }
 
 /* Kolom teks */
@@ -1620,7 +1651,8 @@ p {
 .product-text h2 {
     font-size: 28px;
     color: #7b7b1a;
-    margin-bottom: 10px;
+    margin-bottom: 15px; 
+    font-weight: bold; 
 }
 
 .product-text p {
@@ -1665,7 +1697,11 @@ p {
 /* Responsif */
 @media (max-width: 1024px) {
     .product-detail {
-        flex-wrap: wrap; /* Masih dalam satu baris kecuali jika tidak cukup */
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .product-detail.reverse {
+        flex-wrap: wrap;
         gap: 10px;
     }
 
@@ -1677,7 +1713,12 @@ p {
 /* Untuk layar di bawah 768px (tablet & mobile) */
 @media (max-width: 768px) {
     .product-detail {
-        flex-direction: column; /* Mengubah jadi atas-bawah */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .product-detail.reverse {
+        flex-direction: column;
         align-items: center;
         text-align: center;
     }
@@ -1803,7 +1844,7 @@ p {
     }
 
     .detproduct-name {
-        font-size: 28px;
+        font-size: 20px;
     }
 
     .detproduct-description {
@@ -1837,7 +1878,7 @@ p {
 }
 
 .section-title {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
     color: #333;
     padding: 0 10%;
@@ -1846,10 +1887,10 @@ p {
 /* Activity Grid */
 .activities-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
     padding: 20px;
-    justify-content: center;
+    justify-items: center;
 }
 
 
@@ -1868,6 +1909,14 @@ p {
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
 }
 
+.activities-grid > .activity-card:nth-child(4) {
+    grid-column: 1 / 2; 
+}
+
+.activities-grid > .activity-card:nth-child(5) {
+    grid-column: 2 / 3; 
+}
+
 /* Activity Image */
 .activity-image {
     width: 100%;
@@ -1881,6 +1930,7 @@ p {
     margin: 15px 0;
     color: #333;
     font-weight: bold;
+    text-align: center;
 }
 
 /* Activity Info */
@@ -1923,6 +1973,7 @@ p {
 .activity-link:hover {
     color: #61610b;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -2118,7 +2169,7 @@ p {
 /* Tablet (≤768px) */
 @media (max-width: 768px) {
     .detactivity-title {
-        font-size: 28px;
+        font-size: 20px;
     }
 
     .detactivity-meta {
@@ -2167,7 +2218,6 @@ p {
 ========================================== */
 
 .article-container {
-    background: white;
     max-width: 100%;
     margin: 0;
     padding: 0;
@@ -2178,14 +2228,16 @@ p {
     align-items: center;
     position: relative;
 
-}.article-header {
-    width: 100%;
-    height: 100vh;
+}
+
+.article-header {
+    height: 600px;
     margin: 0;
     padding: 20px;
     display: flex;
-    justify-content: flex-start; 
-    gap: 10px; 
+    justify-content: flex-start;
+    gap: 10px;
+    overflow: hidden;
 }
 
 /* Judul */
@@ -2201,8 +2253,8 @@ p {
 .article-header img {
     width: 100%;
     height: auto;
-    /* object-fit: cover; */
     border-radius: 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Body */
@@ -2217,32 +2269,35 @@ p {
 
 /* Metadata */
 .article-meta {
-    font-size: 16px;
+    font-size: 1.6vw;  /* Font size as a percentage of the viewport width */
     color: #444;
     font-weight: bold;
     display: flex;
     flex-direction: column;
     justify-content: start;
 }
-.article-meta .badge {
+
+.article-meta .meta-badge {
     background: #7b7b1a;
     color: white;
-    padding: 10px;
+    padding: 3%;  /* Padding as a percentage of the parent element */
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 14px; /* Font size relative to the viewport width */
     text-transform: uppercase;
     font-weight: bold;
     display: block;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 2%; 
 }
+
 .article-meta span {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
+
 .article-meta .meta-title {
     font-weight: bold;
-    font-size: 10px;
+    font-size: 1.2vw;  /* Font size as a percentage of the viewport width */
     color: #222;
 }
 
@@ -2253,7 +2308,7 @@ p {
     max-width: 100%; 
 }
 .article-content h1 {
-    font-size: 28px;
+    font-size: 20px;
     color: #222;
     margin-bottom: 15px;
 }
@@ -2269,6 +2324,50 @@ p {
     height: auto;
     border-radius: 5px;
 }
+
+/* Styling for the <h2> */
+.article-description h2 {
+    font-size: 20px; /* Font size for the heading */
+    font-weight: bold;
+    color: #333; /* Dark gray for the text */
+    margin-top: 20px; /* Space above the heading */
+    margin-bottom: 10px; /* Space below the heading */
+    border-bottom: 2px solid #7b7b1a; /* Adding a line under the heading */
+    padding-bottom: 10px; 
+}
+
+/* Styling for the <p> (paragraphs) */
+.article-description p {
+    font-size: 16px; /* Font size for paragraphs */
+    line-height: 24px; /* Spacing between lines */
+    color: #555; /* Medium gray for text */
+    margin-bottom: 20px; /* Space between paragraphs */
+    text-align: justify; /* Justify the text to align left and right */
+}
+
+/* Styling for the <li> (list items) */
+.article-description ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0; /* Remove left padding */
+}
+
+.article-description ul li {
+    font-size: 16px; /* Font size for list items */
+    color: #555; /* Medium gray for text */
+    margin-bottom: 10px; /* Space between list items */
+    position: relative;
+    padding-left: 20px; /* Add space for custom bullet */
+}
+
+.article-description ul li::before {
+    content: '•'; /* Custom bullet point */
+    font-size: 18px; /* Size of the bullet */
+    color: #7b7b1a; /* Color of the bullet */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
 /* Kolom Kanan: Sidebar Artikel Terkait */
 .article-sidebar {
     padding: 20px;
@@ -2277,6 +2376,7 @@ p {
     height: fit-content; 
     width: 90%;
     box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 .article-sidebar h3 {
@@ -2344,6 +2444,9 @@ p {
 
 /* Untuk layar sangat kecil (ponsel kecil, ≤480px) */
 @media (max-width: 480px) {
+    .article-header {
+        height: 300px;
+    }
     .article-title {
         font-size: 24px;
         text-align: center;

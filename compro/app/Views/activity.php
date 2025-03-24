@@ -63,7 +63,8 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
                   $lang === 'id'
                     ? 'id/aktivitas/' . ($p['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($p['slug_aktivitas_id'] ?? 'aktivitas-tidak-ditemukan')
                     : 'en/activity/' . ($p['slug_kategori_en'] ?? 'category-not-found') . '/' . ($p['slug_aktivitas_en'] ?? 'activity-not-found')
-                ); ?>>Selengkapnya <i class="fa fa-arrow-right"></i></a>
+                ); ?> class="article-btn">
+                                            <?= lang('bahasa.buttonArticle') ?> <i class="fa fa-arrow-right"></i></a>
       </div>
     <?php endforeach; ?>
   </div>

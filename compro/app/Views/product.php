@@ -50,7 +50,7 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
     <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
 </div>
 
-<div class="container mb-5">
+<div class="container mb-5" style="padding: 20px;background-color: white; border-radius:20px;">
     <?php if (!empty($product) && is_array($product)) : ?>
         <?php foreach ($product as $index => $product) : ?>
             <div class="product-detail <?= ($index % 2 !== 0) ? 'reverse' : ''; ?> wow fadeIn">
