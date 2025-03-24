@@ -407,6 +407,9 @@ img.img-fluid {
 
 /* Untuk tablet (≤768px) */
 @media (max-width: 768px) {
+    .carousel-item {
+        height: 630px;
+    }
     .carousel-caption {
         bottom: 30px;
         width: 90%;
@@ -422,6 +425,9 @@ img.img-fluid {
 
 /* Untuk layar HP kecil (≤480px) */
 @media (max-width: 480px) {
+    .carousel-item {
+        height: 600px;
+    }
     .carousel-caption {
         bottom: 20px;
         width: 95%;
@@ -557,12 +563,19 @@ img.img-fluid {
 ========================================== */
 
 .container-xxl {
-    padding: 5rem 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    margin: 0 auto 20px auto;
+    border-radius: 0 0 30px 30px; /* Radius hanya di bagian bawah */
+    max-width: 1200px;
+    text-align: center;
 }
 
 /* Judul Section */
 h1 {
     font-weight: bold; /* Membuat teks h1 tebal */
+    text-align: center; /* Rata tengah */
 }
 
 /* Warna Khusus */
@@ -570,46 +583,50 @@ h1 {
     color: #7b7b1a !important; /* Warna utama */
 }
 
-.text-dark-custom {
-    color: #0a1928 !important; /* Warna sekunder */
+/* Paragraf About */
+p {
+    font-size: 20px;
+    text-align: justify; /* Rata kanan-kiri */
 }
 
-/* Box Angka Fitur */
-.bg-light {
-    background-color: white !important;
-    border-radius: 10px;
-    font-size: 16px;
-}
-
-.bg-dark-custom {
-    background-color: rgba(10, 25, 40, 0.9) !important; /* Warna gelap dengan transparansi */
-    color: white;
-    border-radius: 10px;
-    padding: 1rem 2rem;
-}
-
-/* Tombol Read More */
-.btn-primary {
-    background-color: #7b7b1a;
-    border: none;
+/* Tombol */
+.btn-about {
+    border: 2px solid #7b7b1a; 
     font-weight: 600;
     padding: 12px 24px;
     font-size: 1rem;
     transition: all 0.3s ease-in-out;
-    border-radius: 8px;
+    border-radius: 10px; 
+    display: inline-block; 
+    color: #7b7b1a;
+    text-decoration: none;
+    margin-left: 0;
 }
 
-.btn-primary:hover {
+.btn-about:hover {
     background-color: #61610b;
-    transform: scale(1.05);
+    transform: scale(1.05); 
+    color: white; 
 }
 
+.btn-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
 
-/* Gambar Styling */
 .img-fluid {
     border-radius: 30px;
     object-fit: cover;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Kotak Transparan pada Gambar */
+.bg-dark {
+    background-color: rgba(10, 25, 40, 0.9) !important;
+    color: white;
+    border-radius: 10px;
+    padding: 1rem 2rem;
 }
 
 /* Animasi FadeIn */
@@ -627,48 +644,157 @@ h1 {
         transform: translateY(0);
     }
 }
+/* ==============================
+   RESPONSIVE STYLING
+================================= */
 
-/* Tablet (Teks & Gambar Sejajar) */
-@media (max-width: 992px) {
-    .about-section {
-        flex-direction: column;
-        text-align: center;
+/* Desktop besar (≥1200px) */
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+
+    .btn-product {
+        font-size: 1.1rem;
+        padding: 14px 28px;
+    }
+
+    .bg-dark {
+        width: 80%;
+        margin: 0 auto;
+        padding: 1.5rem;
     }
 }
 
-/* Mobile (Teks di Atas Gambar, Rata Tengah & Font Kecil) */
-@media (max-width: 768px) {
-    .about-section {
-        position: relative;
-        text-align: center; /* Pastikan teks rata tengah */
+/* Laptop & Tablet besar (≤1199px) */
+@media (max-width: 1199px) {
+    h1 {
+        font-size: 48px;
     }
 
-    .about-content {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.6);
-        color: white;
-        padding: 15px;
-        border-radius: 10px;
+    p {
+        font-size: 20px;
+        margin: 0 40px;
+    }
+
+    .btn-product {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+
+    .bg-dark {
+        width: 85%;
+        padding: 1.2rem;
+    }
+}
+
+/* Tablet (≤992px) */
+@media (max-width: 992px) {
+    h1 {
         text-align: center;
-        width: 90%; /* Agar lebih responsif */
+        font-size: 45px;
+    }
+
+    p {
+        font-size: 18px;
+        text-align: justify;
+        margin: 0 30px;
+    }
+
+    .btn-product {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .bg-dark {
+        width: 90%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+}
+
+/* Tablet kecil & HP besar (≤767px) */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 16px;
+        margin: 0 20px;
+    }
+
+    .btn-product {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+        margin-top: 10px; /* Tambahan margin atas untuk tombol */
+    }
+
+    .bg-dark {
+        width: 95%;
+        padding: 0.8rem;
+    }
+    .btn-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* HP sedang (≤575px) */
+@media (max-width: 575px) {
+    h1 {
+        font-size: 35px;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 0 15px;
+    }
+
+    .btn-about {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        margin-top: 15px; /* Tambahan margin atas untuk tombol */
+    }
+
+    .bg-dark {
+        width: 100%;
+        padding: 0.6rem;
+    }
+    .btn-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* HP kecil (≤480px) */
+@media (max-width: 480px) {
+    .about-content {
+        width: 100%;
+        padding: 10px;
+        text-align: justify;
     }
 
     .about-content h1 {
-        font-size: 1rem; /* Ukuran judul lebih kecil */
+        font-size: 1rem;
     }
 
     .about-content p {
-        font-size: 0.75rem; /* Ukuran teks lebih kecil */
+        font-size: 0.8rem;
     }
 
     .btn-primary {
-        font-size: 0.85rem; /* Ukuran tombol lebih kecil */
-        padding: 8px 16px;
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        margin-top: 20px; /* Tambahan margin atas lebih besar untuk tombol di layar kecil */
     }
 }
+
+
 /* ==========================================
    ACTIVITY STYLING
 ========================================== */

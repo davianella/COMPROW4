@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <!-- Carousel Start -->
-<div class="container-fluid p-0 mb-5">
+<div class="container-fluid p-0">
     <?php if (!empty($slider) && is_array($slider)) : ?>
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <!-- Carousel Indicators -->
@@ -89,25 +89,27 @@
         <div class="row g-5 align-items-center">
             <!-- Kolom Teks di Sebelah Kiri -->
             <div class="col-lg-6 order-lg-1 order-2">
-                <h6 class="text-primary text-uppercase"> >> <?= ($lang === 'id') ? 'Tentang Kami' : 'About Us' ?> << </h6>
-                <h1 class="mb-4" style ="font-size: 60px";><?= esc($profil['nama_perusahaan'] ?? 'Perusahaan') ?></h1>
+                <h6 class="text-primary text-uppercase text-center text-lg-start">
+                    >> <?= ($lang === 'id') ? 'Tentang Kami' : 'About Us' ?> <<
+                </h6>
+                <h1 class="mb-4 text-center text-lg-start">
+                    <?= esc($profil['nama_perusahaan'] ?? 'Perusahaan') ?>
+                </h1>
                 <?php
-                // Ambil deskripsi perusahaan sesuai bahasa
                 $deskripsi = esc($profil['deskripsi_perusahaan_' . $lang] ?? 'Deskripsi tidak tersedia');
-
-                // Pecah teks menjadi array berdasarkan titik, tanda tanya, atau tanda seru
                 $kalimat = preg_split('/(?<=[.!?])\s+/', $deskripsi, 4, PREG_SPLIT_NO_EMPTY);
-
-                // Ambil maksimal 3 kalimat pertama dan gabungkan kembali
-                $deskripsi_pendek = implode(' ', array_slice($kalimat, 0, 3)) . (count($kalimat) > 3 ? '...' : '');
+                $deskripsi_pendek = implode(' ', array_slice($kalimat, 0, 2)) . (count($kalimat) > 2 ? '..' : '');
                 ?>
 
-                <p style="font-size: 20px"><?= $deskripsi_pendek ?>...</p>
-
-                <a href="<?= base_url($lang . '/about') ?>" class="btn btn-product">
-                    <?= ($lang === 'id') ? 'Info Selengkapnya' : 'More Info' ?> 
-                    <i class="fa fa-arrow-right ms-2"></i>
-                </a>
+                <p class="text-justify" style="font-size: 20px; text-align: justify;">
+                    <?= $deskripsi_pendek ?>...
+                </p>
+                <div class="btn-wrapper">
+                    <a href="<?= base_url($lang . '/about') ?>" class="btn-about text-center">
+                        <?= ($lang === 'id') ? 'Info Selengkapnya' : 'More Info' ?> 
+                        <i class="fa fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Kolom Gambar di Sebelah Kanan -->
@@ -129,6 +131,7 @@
 </div>
 <!-- About End -->
 
+
 <!-- Product Start -->
 <div class="container-fluid py-5 px-4 px-lg-0 mb-5 wow fadeIn">
     <div class="row g-0">
@@ -141,12 +144,12 @@
         </div>
 
         <!-- Kolom Kanan: Produk -->
-        <div class="col-md-12 col-lg-9" style="background-color: rgba(255, 255, 255, 0.5); border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 0; border-bottom-left-radius: 0;">
+        <div class="col-md-12 col-lg-9">
             <div class="ms-lg-5 ps-lg-5 pe-lg-5">
                 <!-- Header -->
                 <div class="text-center text-lg-start mt-2">
-                    <h6 class="text-primary text-uppercase">>><?= lang('bahasa.headerProduk') ?><<</h6>
-                    <h1 class="mb-4"><?= lang('bahasa.captionProduk') ?></h1>
+                    <h6 class="text-primary text-uppercase"style="text-align: left;">>><?= lang('bahasa.headerProduk') ?><<</h6>
+                    <h1 class="mb-4" style="text-align: left;"><?= lang('bahasa.captionProduk') ?></h1>
                 </div>
 
                 <div class="row g-4">
@@ -173,8 +176,8 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="text-center mt-4">
-                <a href="<?= base_url($lang . '/' . ($productLink ?? 'produk')) ?>" class="btn btn-primary btn-lg"><?= ($lang === 'id') ? 'Produk Lainnya →' : 'Other Products →' ?> </a>
+                <div class="text-center mt-2">
+                <a href="<?= base_url($lang . '/' . ($productLink ?? 'produk')) ?>" class="btn btn-primary btn-lg w-100"><?= ($lang === 'id') ? 'Produk Lainnya →' : 'Other Products →' ?> </a>
                 </div>
             </div>
         </div>
@@ -298,7 +301,7 @@
 
 
 <!-- Contact Start  -->
-<div id="contact" class="container-fluid border-top wow fadeIn">
+<div id="contact" class="container-fluid wow fadeIn">
     <div class="row">
         <!-- Google Maps -->
         <div class="col-md-6 px-0">
