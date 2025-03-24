@@ -93,38 +93,50 @@ if (!empty($categoriesAktivitas)) {
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand me-auto" href="#">BDICAM</a>
+    <div class="header-logo-container">
+        <a class="navbar-brand me-auto" href="#">
+            <img src="<?= base_url('assets/img/logo/' . $profil['logo_perusahaan']); ?>" 
+                alt="<?= $lang == 'id' ? $profil['alt_logo_perusahaan_id'] : $profil['alt_logo_perusahaan_en']; ?>" 
+                class="header-logo-img">
+        </a>
+    </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BDICAM</h5>
+            <div class="header-logo-container-offcanvas">
+                <a class="navbar-brand me-auto" href="#">
+                    <img src="<?= base_url('assets/img/logo/' . $profil['logo_perusahaan']); ?>" 
+                        alt="<?= $lang == 'id' ? $profil['alt_logo_perusahaan_id'] : $profil['alt_logo_perusahaan_en']; ?>" 
+                        class="header-logo-img">
+                </a>
+            </div>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                     <!-- Home -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'home' ? 'active' : '' ?>" 
+                        <a class="nav-link mx-lg-2 <?= isset($data['activeMenu']) && $data['activeMenu'] === 'home' ? 'active' : '' ?>" 
                            href="<?= base_url($lang . '/') ?>">
                             <?= lang('bahasa.home'); ?>
                         </a>
                     </li>
                     <!-- About -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'about' ? 'active' : '' ?>" 
+                        <a class="nav-link mx-lg-2 <?= isset($data['activeMenu']) && $data['activeMenu'] === 'about' ? 'active' : '' ?>" 
                            href="<?= base_url($lang . '/' . $aboutLink) ?>">
                             <?= lang('bahasa.about'); ?>
                         </a>
                     </li>
                     <!-- Produk -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'product' ? 'active' : '' ?>" 
+                        <a class="nav-link mx-lg-2 <?= isset($data['activeMenu']) && $data['activeMenu'] === 'product' ? 'active' : '' ?>" 
                            href="<?= base_url($lang . '/' . $productLink) ?>">
                             <?= lang('bahasa.product'); ?>
                         </a>
                     </li>
                     <!-- Dropdown Aktivitas -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'activity' ? 'active' : '' ?>" href="#" id="activityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle mx-lg-2 <?= isset($data['activeMenu']) && $data['activeMenu'] === 'activity' ? 'active' : '' ?>" href="#" id="activityDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= lang('bahasa.activity'); ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="activityDropdown">
@@ -147,7 +159,7 @@ if (!empty($categoriesAktivitas)) {
                     </li>
                     <!-- Dropdown Artikel -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'article' ? 'active' : '' ?>" href="#" id="articlesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle mx-lg-2 <?= isset($data['activeMenu']) && $data['activeMenu'] === 'article' ? 'active' : '' ?>" href="#" id="articlesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <?= lang('bahasa.article'); ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="articlesDropdown">
@@ -170,7 +182,7 @@ if (!empty($categoriesAktivitas)) {
                     </li>
                     <!-- Kontak -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2 <?= isset($activeMenu) && $activeMenu === 'contact' ? 'active' : '' ?>" 
+                        <a class="nav-link mx-lg-2 <?= isset($data['activeMenu']) && $data['activeMenu'] === 'contact' ? 'active' : '' ?>" 
                            href="<?= base_url($lang . '/' . $contactLink) ?>">
                             <?= lang('bahasa.contact'); ?>
                         </a>
@@ -196,7 +208,7 @@ if (!empty($categoriesAktivitas)) {
                 </ul>
             </div>
         </div>
-        <a href="<?= base_url($lang . '/' . $contactLink) ?>" class="calling-button"><?= ($lang === 'id') ? 'Hubungi Kami' : 'Get Touch' ?></a>
+        <a href="" ></a>
         <button class="navbar-toggler p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

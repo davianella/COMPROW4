@@ -60,6 +60,10 @@ $english_url = base_url($clean_url);
 $indonesia_url = base_url($clean_url);
 ?>
 
+<div class="fixed-buttons">
+    <a href="<?= base_url($lang . '/' . $contactLink) ?>" class="call-button"><i class="fa fa-phone"></i></a>
+    <button id="scroll-up-btn" class="scroll-up-button">^</button>
+</div>
 <!-- Footer Start -->
 <footer id="footer" class="footer">
     <div class="container-fluid">
@@ -68,7 +72,6 @@ $indonesia_url = base_url($clean_url);
                 <div class="footer-col footer-brand">
                     <a href="<?= base_url('/') ?>" class="footer-logo">
                         <img src="<?= base_url('assets/img/logo/' . $profil['logo_perusahaan']); ?>" alt="<?= $lang == 'id' ? $profil['alt_logo_perusahaan_id'] : $profil['alt_logo_perusahaan_en']; ?>" class="footer-logo-img">
-                        BDICAM
                     </a>
                 </div>
                 <div class="col-md-4 footer-col">
@@ -134,7 +137,7 @@ $indonesia_url = base_url($clean_url);
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p>&copy; 2025 BDICAM. All Rights Reserved.</p>
+            <p>Copyright &copy; 2025. All Rights Reserved. Designed with love by Me</p>
         </div>
     </div>
 </footer>

@@ -23,9 +23,9 @@
   <!-- Page Header End -->
 
   <!-- Activity Section Start -->
-  <div id="recent-activities" class="text-center wow fadeIn">
-    <h6 class="section-subtitle"> >> Aktivitas Kami << </h6>
-        <h1 class="section-title">Kegiatan yang Baru Saja Kami Lakukan</h1>
+  <div class="title-page">
+    <h6 class="sub-title">>><?= $lang == 'id' ? $meta['nama_halaman_id'] : $meta['nama_halaman_en']; ?><<</h6>
+    <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
   </div>
 
   <div class="activities-grid">

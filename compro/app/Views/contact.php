@@ -19,9 +19,14 @@
     </div>
 </div>
 <!-- Page Header End -->
+
+<div class="title-page">
+    <h6 class="sub-title">>><?= $lang == 'id' ? $meta['nama_halaman_id'] : $meta['nama_halaman_en']; ?><<</h6>
+    <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
+</div>
  
 <!-- Contact Start  -->
-<div id="contact" class="container-fluid border-top wow fadeIn">
+<div id="contact" class="container-fluid wow fadeIn">
     <div class="row">
         <!-- Google Maps -->
         <div class="col-md-6 px-0">
@@ -34,8 +39,6 @@
 
         <!-- Informasi Kontak -->
         <div class="col-md-6 px-5 has-height-lg middle-items">
-            <h6 class="text-primary text-uppercase"> >> <?= lang('bahasa.headerKontak') ?> << </h6>
-            <h3><?= lang('bahasa.deskripsiKontak') ?></h3>
             <p><?= isset($kontak['deskripsi_kontak_' . $lang]) ? $kontak['deskripsi_kontak_' . $lang] : 'Deskripsi tidak tersedia.' ?></p>
         </div>
     </div>

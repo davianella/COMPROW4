@@ -29,18 +29,13 @@ return [
     'activity' => 'Activity',
     'product' => 'Product',
 
-    // SLIDER
-    'buttonSlider' => 'Contact Us',
-    'headerSlider' => 'Welcome to Creativenest',
 
     // ABOUT MENU
     'titleAbout' => 'MORE ABOUT US',
     'headerAbout' => 'ABOUT US',
-    'deskripsiAbout' => 'Empowering Your Digital Journey',
 
     // KONTAK MENU
     'headerKontak' => 'Contact Us',
-    'deskripsiKontak' => 'Contact Us to Discuss Your Digital Solution',
 
     // PRODUK MENU
     'headerProduk' => 'Our Products',

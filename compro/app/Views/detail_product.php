@@ -20,9 +20,9 @@
     </div>
 </div>
 
-<div id="product" class="text-center wow fadeIn">
-    <h6 class="text-uppercase" style="color: #ff214f;"> >> <?= ($lang === 'id') ? 'Detail Produk' : 'Product Details' ?> << </h6>
-    <h1 class="detproduct-name"><?= esc($product['nama_produk_' . $lang] ?? $product['nama_produk_id']) ?></h1>
+<div class="title-page">
+    <h6 class="sub-title">>><?= $lang == 'id' ? $meta['nama_halaman_id'] : $meta['nama_halaman_en']; ?><<</h6>
+    <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
 </div>
 
 <div class="detproduct-detail">

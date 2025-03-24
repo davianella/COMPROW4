@@ -26,14 +26,13 @@
                             alt="<?= esc($slide['alt_foto_slider_' . ($lang ?? 'id')]) ?>">
                         <div class="carousel-caption d-flex align-items-center justify-content-center">
                             <div class="container text-center">
-                                <div class="row justify-content-center">
-                                    <div class="col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center">
-                                        <img class="img-fluid animate__animated animate__zoomIn" 
-                                            src="<?= base_url('assets/img/cam' . ($key + 1) . '.png') ?>" 
-                                            alt="Gambar Cam <?= $key + 1 ?>">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center">                                            <img class="img-fluid animate__animated animate__zoomIn" 
+                                        src="<?= base_url('assets/img/produk/pro' . ($key + 1) . '.png') ?>" 
+                                        alt="Gambar Produk <?= $key + 1 ?>">
                                     </div>
-                                    <div class="col-10 col-lg-7 mt-4">
-                                        <h1 class="display-3 text-white mb-4 pb-3 animate__animated animate__slideInDown">
+                                    <div class="col-lg-7">
+                                        <h1 class="display-3 text-white animate__animated animate__slideInDown">
                                             <?= esc($slide['caption_slider_' . ($lang ?? 'id')]) ?>
                                         </h1>
                                     </div>
@@ -92,7 +91,19 @@
             <div class="col-lg-6 order-lg-1 order-2">
                 <h6 class="text-primary text-uppercase"> >> <?= ($lang === 'id') ? 'Tentang Kami' : 'About Us' ?> << </h6>
                 <h1 class="mb-4" style ="font-size: 60px";><?= esc($profil['nama_perusahaan'] ?? 'Perusahaan') ?></h1>
-                <p  style ="font-size: 20px"><?= esc($profil['deskripsi_perusahaan_' . $lang] ?? 'Deskripsi tidak tersedia') ?></p>
+                <?php
+                // Ambil deskripsi perusahaan sesuai bahasa
+                $deskripsi = esc($profil['deskripsi_perusahaan_' . $lang] ?? 'Deskripsi tidak tersedia');
+
+                // Pecah teks menjadi array berdasarkan titik, tanda tanya, atau tanda seru
+                $kalimat = preg_split('/(?<=[.!?])\s+/', $deskripsi, 4, PREG_SPLIT_NO_EMPTY);
+
+                // Ambil maksimal 3 kalimat pertama dan gabungkan kembali
+                $deskripsi_pendek = implode(' ', array_slice($kalimat, 0, 3)) . (count($kalimat) > 3 ? '...' : '');
+                ?>
+
+                <p style="font-size: 20px"><?= $deskripsi_pendek ?>...</p>
+
                 <a href="<?= base_url($lang . '/about') ?>" class="btn btn-product">
                     <?= ($lang === 'id') ? 'Info Selengkapnya' : 'More Info' ?> 
                     <i class="fa fa-arrow-right ms-2"></i>
@@ -108,7 +119,8 @@
                         alt="<?= esc($profil['alt_foto_perusahaan_' . $lang] ?? 'Company Image') ?>">
                     <div class="position-absolute top-50 start-0 translate-middle-y ms-n4 py-4 px-5 bg-dark opacity-75 text-white"
                         style="border-radius: 10px;">
-                        <h1 class="display-4 mb-0">BDICAM</h1>
+                        <h1 class="display-4 mb-0">INDONESIAN</h1>
+                        <h1 class="display-4 mb-0">EXPORTER</h1>
                     </div>
                 </div>
             </div>
@@ -129,17 +141,19 @@
         </div>
 
         <!-- Kolom Kanan: Produk -->
-        <div class="col-md-12 col-lg-9">
-            <div class="ms-lg-5 ps-lg-5">
+        <div class="col-md-12 col-lg-9" style="background-color: rgba(255, 255, 255, 0.5); border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 0; border-bottom-left-radius: 0;">
+            <div class="ms-lg-5 ps-lg-5 pe-lg-5">
                 <!-- Header -->
-                <div class="text-center text-lg-start">
+                <div class="text-center text-lg-start mt-2">
                     <h6 class="text-primary text-uppercase">>><?= lang('bahasa.headerProduk') ?><<</h6>
                     <h1 class="mb-4"><?= lang('bahasa.captionProduk') ?></h1>
                 </div>
 
                 <div class="row g-4">
                     <?php if (!empty($product) && is_array($product)) : ?>
+                        <?php $count = 0; ?>
                         <?php foreach ($product as $item) : ?>
+                            <?php if ($count >= 4) break; ?>
                             <div class="col-md-6">
                                 <div class="product-item">
                                     <div class="product-img-home">
@@ -148,12 +162,13 @@
                                     </div>
                                     <div class="product-content">
                                         <h5><?= esc($item['nama_produk_' . $lang] ?? $item['nama_produk_id']) ?></h5>
-                                        <a href="<?= base_url('produk/' . esc($item['slug_' . $lang] ?? $item['slug_id'])) ?>" class="btn btn-product">
+                                        <a href="<?= base_url(trim($lang . '/' . ($productLink ?? 'produk') . '/' . $item['slug_' . $lang], '/')) ?>" class="btn btn-product">
                                         <?= ($lang === 'id') ? 'Info Lengkap' : 'More Info' ?>  <i class="fa fa-arrow-right ms-2"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
+                            <?php $count++; ?>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>
@@ -168,44 +183,47 @@
 <!-- Product End -->
 
 <!-- Activity Start -->
-<div id="activity" class="text-center bg-dark">
+<div id="activity" class="text-center">
     <h6 class="text-primary text-uppercase"> >><?= lang('bahasa.headerActivity') ?><< </h6>
-    <h1 class="mb-2 text-light"><?= lang('bahasa.captionActivity') ?></h1>
+    <h1 class="mb-2" style="color: #61610b;"><?= lang('bahasa.captionActivity') ?></h1>
 </div>
 
-<div class="activity bg-dark">
-    <?php if (!empty($aktivitas)) : ?>
-        <?php $count = 0; ?>
-        <?php foreach ($aktivitas as $item) : ?>
-            <?php if ($count >= 9) break; ?> <!-- Batasi maksimal 9 gambar -->
+<div class="activity">
+    <?php
+    $totalAktivitas = count($aktivitas);
+    if ($totalAktivitas > 0) {
+        if ($totalAktivitas < 3) {
+            $limit = $totalAktivitas;
+        } elseif ($totalAktivitas < 6) {
+            $limit = 3;
+        } elseif ($totalAktivitas < 9) {
+            $limit = 6;
+        } else {
+            $limit = 9;
+        }
+
+        for ($i = 0; $i < $limit; $i++) :
+            $item = $aktivitas[$i];
+    ?>
             <div class="activity-item">
-                <img src="<?= base_url('assets/img/aktivitas/' . esc($item['foto_aktivitas'])) ?>" alt="<?= esc($item['judul_aktivitas_id']) ?>" class="activity-img">
+                <img src="<?= base_url('assets/img/aktivitas/' . esc($item['foto_aktivitas'])) ?>" 
+                     alt="<?= esc($item['judul_aktivitas_id']) ?>" class="activity-img">
                 <a href="#" class="activity-overlay">
                     <h5><?= esc($item['judul_aktivitas_' . $lang] ?? 'Judul tidak tersedia') ?></h5>
                 </a>
             </div>
-            <?php $count++; ?>
-        <?php endforeach; ?>
-    <?php else : ?>
-        <!-- Fallback jika tidak ada aktivitas -->
-        <?php for ($i = 1; $i <= 9; $i++) : ?>
-            <div class="activity-item">
-                <img src="<?= base_url('assets/img/blog' . ($i % 2 + 1) . '.jpeg') ?>" alt="Gallery Image" class="activity-img">
-                <a href="#" class="activity-overlay">
-                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
-                </a>
-            </div>
-        <?php endfor; ?>
-    <?php endif; ?>
+    <?php
+        endfor;
+    }
+    ?>
 </div>
-
-<div class="activity-container text-center mt-3">
+<div class="activity-container text-center mt-1">
     <a href="<?= base_url('activity') ?>" class="btn btn-primary btn-lg"><?= ($lang === 'id') ? 'Semua Aktivitas →' : 'All Activities →' ?> </a>
 </div>
 <!-- Activity End -->
 
 <!-- Artikel Start -->
-<div id="blog" class="blog wow fadeIn" style="margin-top: 90px;">
+<div id="blog" class="blog wow fadeIn" style="margin-top: 40px;">
     <div class="container">
         <div class="section-header text-center">
             <h6 class="text-primary text-uppercase"> >><?= lang('bahasa.headerArticle') ?><<</h6>
@@ -225,7 +243,7 @@
                                     <div class="single-blog-item-txt">
                                         <h2>
                                             <a href="<?= base_url('artikel/' . esc($item['slug_artikel_' . $lang] ?? $item['slug_artikel_id'])) ?>">
-                                                <?= esc($item['title_artikel_' . $lang] ?? $item['title_artikel_id']) ?>
+                                                <?= esc($item['judul_artikel_' . $lang] ?? $item['judul_artikel_id']) ?>
                                             </a>
                                         </h2>
                                         <h4>
@@ -237,7 +255,7 @@
                                             </span>
                                         </h5>
                                         <p><?= esc($item['snippet_' . $lang] ?? $item['snippet_id']) ?></p>
-                                        <a href="<?= base_url('artikel/' . esc($item['slug_artikel_' . $lang] ?? $item['slug_artikel_id'])) ?>" class="activity-btn">
+                                        <a href="<?= base_url('artikel/' . esc($item['slug_artikel_' . $lang] ?? $item['slug_artikel_id'])) ?>" class="article-btn">
                                             <?= lang('bahasa.buttonArticle') ?><i class="fa fa-arrow-right ms-3"></i>
                                         </a>
                                     </div>
@@ -251,8 +269,8 @@
 
                 <!-- Sidebar Artikel Terkait -->
                 <div class="col-md-4 col-sm-12">
-                    <aside class="article-sidebar right-sidebar">
-                        <h3 class="mb-4" style="border-bottom: 2px solid #ff214f;"><?= lang('bahasa.sideArticle') ?></h3>
+                    <aside class="article-sidebar right-sidebar bg-white">
+                        <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;"><?= lang('bahasa.sideArticle') ?></h3>
                         <?php if (!empty($sideArtikel) && count($sideArtikel) > 1) : ?>
                             <?php foreach (array_slice($sideArtikel, 1) as $item) : ?>
                                 <div class="blog-sidebar d-flex align-items-center mb-3">
@@ -261,7 +279,7 @@
                                     </div>
                                     <div class="single-blog-item-txt ms-3">
                                         <h4><a href="<?= base_url('artikel/' . esc($item['slug_artikel_' . $lang] ?? $item['slug_artikel_id'])) ?>">
-                                            <?= esc($item['title_artikel_' . $lang] ?? 'Judul tidak tersedia') ?>
+                                            <?= esc($item['judul_artikel_' . $lang] ?? 'Judul tidak tersedia') ?>
                                         </a></h4>
                                         <h6 class="text-muted"><?= date('F Y', strtotime($item['created_at'])) ?></h6>
                                     </div>

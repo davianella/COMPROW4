@@ -19,10 +19,11 @@
 </div>
 <!-- Page Header End -->
 
-<div id="about" class="text-center wow fadeIn">
-    <h6 class="text-uppercase" style="color: #ff214f;">>><?= lang('bahasa.headerAbout') ?><<</h6>
-    <h1 class="mb-5"><?= ($lang === 'id') ? 'Lebih lanjut tentang kami' : 'More About Us' ?></h1>
+<div class="title-page">
+    <h6 class="sub-title">>><?= $lang == 'id' ? $meta['nama_halaman_id'] : $meta['nama_halaman_en']; ?><<</h6>
+    <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
 </div>
+
 
 <!-- About Start -->
 <div class="container-xxl py-5 mb-5 wow fadeIn">

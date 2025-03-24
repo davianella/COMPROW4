@@ -24,10 +24,10 @@
   <!-- Article Start -->
   <div id="blog" class="blog wow fadeIn">
     <div class="container">
-      <div class="section-header">
-        <h6 class="text-primary text-uppercase"> >> Artikel Kami << </h6>
-            <h1 class="mb-4">Artikel dan Berita Terbaru Tentang Kami</h1>
-      </div>
+    <div class="title-page">
+      <h6 class="sub-title">>><?= $lang == 'id' ? $meta['nama_halaman_id'] : $meta['nama_halaman_en']; ?><<</h6>
+      <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
+    </div>
       <div class="blog-content">
         <div class="row">
           <div class="col-md-8 col-sm-12">

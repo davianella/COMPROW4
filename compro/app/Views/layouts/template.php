@@ -4,9 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><?= isset($title) ? $title : 'Beranda'; ?></title>
+  <?php if (isset($metaCategory)): ?>
+        <title><?= $lang == 'id' ? $metaCategory['title_id'] : $metaCategory['title_en']; ?></title>
+        <meta name="description" content="<?= $lang == 'id' ? $metaCategory['meta_desc_id'] : $metaCategory['meta_desc_en']; ?>">
+    <?php else: ?>
+        <title><?= $lang == 'id' ? $meta['title_id'] : $meta['title_en']; ?></title>
+        <meta name="description" content="<?= $lang == 'id' ? $meta['meta_desc_id'] : $meta['meta_desc_en']; ?>">
+    <?php endif; ?>
 
-  <link href="<?= base_url('img/favicon.ico'); ?>" rel="icon">
+    <link rel="canonical" href="<?= isset($canonical) && !empty($canonical) ? $canonical : base_url() ?>">
+
+    <!-- Favicons -->
+    <link href=" <?= base_url('favicon.ico'); ?>" rel="icon">
 
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 

@@ -20,9 +20,9 @@
 <!-- Page Header End -->
  
 <!-- Product Start -->
-<div id="product" class="text-center wow fadeIn">
-    <h6 class="text-uppercase" style="color: #ff214f;">>><?= lang('bahasa.headerProduk') ?><<</h6>
-    <h1 class="mb-5"><?= lang('bahasa.captionProduk') ?></h1>
+<div class="title-page">
+    <h6 class="sub-title">>><?= $lang == 'id' ? $meta['nama_halaman_id'] : $meta['nama_halaman_en']; ?><<</h6>
+    <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
 </div>
 
 <div class="container mb-5">
