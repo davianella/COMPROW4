@@ -129,10 +129,7 @@ if (!empty($categoriesAktivitas)) {
                     </li>
                     <!-- Produk -->
                     <li class="nav-item">
-                        <a class="nav-link mx-lg-2 <?= isset($data['activeMenu']) && $data['activeMenu'] === 'product' ? 'active' : '' ?>" 
-                           href="<?= base_url($lang . '/' . $productLink) ?>">
-                            <?= lang('bahasa.product'); ?>
-                        </a>
+                    <a href="<?= base_url($lang . '/' . $productLink) ?>" class="<?= isset($activeMenu) && $activeMenu === 'product' ? 'active' : '' ?> nav-link mx-lg-2"><?= lang('bahasa.product'); ?></a>
                     </li>
                     <!-- Dropdown Aktivitas -->
                     <li class="nav-item dropdown">

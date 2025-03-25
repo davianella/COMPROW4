@@ -17,9 +17,9 @@ return [
     'publish_date' => 'Publish Date',
 
     // FOOTER
-    'headerService' => 'Our Article',
+    'footerArticle' => 'Our Article',
     'headerLink' => 'Useful Links',
-    'sosmedLink' => 'Follow us on:',
+    'sosmedLink' => 'Follow us on',
     'marketplaceLink' => 'Our Marketplace',
 
     // NAVBAR

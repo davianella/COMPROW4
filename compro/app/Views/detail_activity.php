@@ -60,7 +60,7 @@ $background_image = 'assets/img/header.jpeg';
           <h1 class="detactivity-title"><?= $lang == 'id' ? $aktivitas['judul_aktivitas_id'] : $aktivitas['judul_aktivitas_en']; ?></h1>
           <div class="detactivity-meta">
             <span class="badge"><?= $lang == 'id' ? $aktivitas['nama_kategori_id'] : $aktivitas['nama_kategori_en']; ?></span>
-            <span class="detactivity-date">Tanggal: <?= date('d M Y', strtotime($aktivitas['updated_at'])); ?></span>
+            <span class="detactivity-date"><?= $lang == 'id' ? 'Tanggal : ' : 'Date : ' ?> <?= date('d M Y', strtotime($aktivitas['updated_at'])); ?></span>
           </div>
           <div class="detactivity-header">
             <img src="<?= base_url('assets/img/aktivitas/' . $aktivitas["foto_aktivitas"]) ?>" class="card-img-top" alt="<?= $lang == 'id' ? $aktivitas['alt_aktivitas_id'] : $aktivitas['alt_aktivitas_en']; ?>" class="detactivity-img">

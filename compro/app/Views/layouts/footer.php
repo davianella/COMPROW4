@@ -64,6 +64,7 @@ $indonesia_url = base_url($clean_url);
     <a href="<?= base_url($lang . '/' . $contactLink) ?>" class="call-button"><i class="fa fa-phone"></i></a>
     <button id="scroll-up-btn" class="scroll-up-button">^</button>
 </div>
+
 <!-- Footer Start -->
 <footer id="footer" class="footer">
     <div class="container-fluid">
@@ -71,9 +72,12 @@ $indonesia_url = base_url($clean_url);
             <div class="row">
                 <div class="footer-col footer-brand">
                     <a href="<?= base_url('/') ?>" class="footer-logo">
-                        <img src="<?= base_url('assets/img/logo/' . $profil['logo_perusahaan']); ?>" alt="<?= $lang == 'id' ? $profil['alt_logo_perusahaan_id'] : $profil['alt_logo_perusahaan_en']; ?>" class="footer-logo-img">
+                        <img src="<?= base_url('assets/img/logo/' . $profil['logo_perusahaan']); ?>" 
+                             alt="<?= $lang == 'id' ? $profil['alt_logo_perusahaan_id'] : $profil['alt_logo_perusahaan_en']; ?>" 
+                             class="footer-logo-img">
                     </a>
                 </div>
+                
                 <div class="col-md-4 footer-col">
                     <h5><?= lang('bahasa.headerLink'); ?></h5>
                     <ul>
@@ -84,22 +88,28 @@ $indonesia_url = base_url($clean_url);
                         <li><a href="<?= base_url($lang . '/contact') ?>"><?= lang('bahasa.contact'); ?></a></li>
                     </ul>
                 </div>
+
                 <div class="col-md-4 footer-col">
-                    <h5><?= lang('bahasa.headerService'); ?></h5>
+                    <h5><?= lang('bahasa.footerArticle'); ?></h5>
                     <ul>
                         <?php if (!empty($kategori_teratas) && is_array($kategori_teratas)): ?>
                             <?php foreach ($kategori_teratas as $kategori): ?>
+                                <?php 
+                                    $slug = ($lang === 'id') ? $kategori['slug_kategori_id'] : $kategori['slug_kategori_en'];
+                                    $name = ($lang === 'id') ? $kategori['nama_kategori_id'] : $kategori['nama_kategori_en'];
+                                ?>
                                 <li>
-                                    <a href="<?= base_url("id/artikel/" . $kategori['slug_kategori_id']) ?>">
-                                        <?= $kategori['nama_kategori_id']; ?>
+                                    <a href="<?= base_url("$lang/artikel/$slug") ?>">
+                                        <?= $name; ?>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <li>No categories available</li>
+                            <li><?= ($lang === 'id') ? "Tidak ada kategori tersedia" : "No categories available"; ?></li>
                         <?php endif; ?>
                     </ul>
                 </div>
+
                 <div class="col-md-4 footer-col">
                     <h5><?= lang('bahasa.sosmedLink'); ?></h5>
                     <ul>
@@ -107,16 +117,19 @@ $indonesia_url = base_url($clean_url);
                             <?php foreach ($sosmed as $s): ?>
                                 <li>
                                     <a href="<?= $s['link_sosmed']; ?>" target="_blank">
-                                        <img src="<?= base_url('assets/img/logo/' . $s['logo_sosmed']); ?>" alt="<?= $s['nama_sosmed']; ?>" style="height: 20px; margin-right: 5px;">
+                                        <img src="<?= base_url('assets/img/logo/' . $s['logo_sosmed']); ?>" 
+                                             alt="<?= $s['nama_sosmed']; ?>" 
+                                             style="height: 20px; margin-right: 5px;">
                                         <?= $s['nama_sosmed']; ?>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <li>No social media available</li>
+                            <li><?= ($lang === 'id') ? "Tidak ada sosial media" : "No social media available"; ?></li>
                         <?php endif; ?>
                     </ul>
                 </div>
+
                 <div class="col-md-4 footer-col">
                     <h5><?= lang('bahasa.marketplaceLink'); ?></h5>
                     <ul>
@@ -124,21 +137,25 @@ $indonesia_url = base_url($clean_url);
                             <?php foreach ($marketplace as $s): ?>
                                 <li>
                                     <a href="<?= $s['link_marketplace']; ?>" target="_blank">
-                                        <img src="<?= base_url('assets/img/logo/' . $s['logo_marketplace']); ?>" alt="<?= $s['nama_marketplace']; ?>" style="height: 20px; margin-right: 5px;">
+                                        <img src="<?= base_url('assets/img/logo/' . $s['logo_marketplace']); ?>" 
+                                             alt="<?= $s['nama_marketplace']; ?>" 
+                                             style="height: 20px; margin-right: 5px;">
                                         <?= $s['nama_marketplace']; ?>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <li>No social media available</li>
+                            <li><?= ($lang === 'id') ? "Tidak ada toko" : "No marketplace available"; ?></li>
                         <?php endif; ?>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom text-center">
-            <p>Copyright &copy; 2025. All Rights Reserved. Designed with love by Me</p>
+
+        <div class="footer-bottom">
+            <p style="text-align: center; padding: 10px 0; background-color: #0a1928; color: white; font-size: 14px;">Copyright &copy; 2025. All Rights Reserved. Designed with love by Me</p>
         </div>
     </div>
 </footer>
 <!-- Footer End -->
+

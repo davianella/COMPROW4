@@ -11,16 +11,16 @@ return [
     'buttonArticle' => 'Selengkapnya',
     'headerArticle' => 'Artikel Kami',
     'captionArticle' => 'Artikel dan Berita Terbaru Tentang Kami',
-    'sideArtikel'=> 'Artikel Terkait',
-    'zeroArtikel' => 'Tidak ada artikel yang tersedia',
+    'sideArticle'=> 'Artikel Terkait',
+    'zeroArticle' => 'Tidak ada artikel yang tersedia',
     'postedBy'=> 'Diunggah Oleh',
     'publish_date' => 'Tanggal Diunggah',
     
 
     // FOOTER
-    'headerService' => 'Artikel Kami',
+    'footerArticle' => 'Artikel Kami',
     'headerLink' => 'Tautan Berguna',
-    'sosmedLink' => 'Ikuti kami di:',
+    'sosmedLink' => 'Ikuti kami di',
     'marketplaceLink' => 'Marketplace Kami',
 
     // NAVBAR
