@@ -143,6 +143,8 @@ class ActivityController extends BaseController
         $kategoriModel = new CategoryArtikelModel();
         $categories = $kategoriModel->findAll();
 
+        $kategoriAktivitasModel = new CategoryActivityModel();
+        $categoriesAktivitas = $kategoriAktivitasModel->findAll();
         // Ambil data kategori artikel terbanyak
         $kategori_teratas = $kategoriModel->getKategoriTerbanyak();
         // Ambil data sosial media
@@ -227,7 +229,7 @@ class ActivityController extends BaseController
             'marketplace' => $marketplace,
             'kontak' => $kontak,
             'categories' => $categories,
-
+            'categoriesAktivitas' => $categoriesAktivitas,
         ]);
     }
 }
