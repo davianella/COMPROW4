@@ -107,7 +107,7 @@ $indonesia_url = base_url($clean_url);
                             <?php foreach ($sosmed as $s): ?>
                                 <li>
                                     <a href="<?= $s['link_sosmed']; ?>" target="_blank">
-                                        <img src="<?= base_url('assets/img/logo/' . $s['logo_sosmed']); ?>" alt="<?= $s['nama_sosmed']; ?>" style="width: 20px; height: 20px; margin-right: 5px;">
+                                        <img src="<?= base_url('assets/img/logo/' . $s['logo_sosmed']); ?>" alt="<?= $s['nama_sosmed']; ?>" style="height: 20px; margin-right: 5px;">
                                         <?= $s['nama_sosmed']; ?>
                                     </a>
                                 </li>
@@ -124,7 +124,7 @@ $indonesia_url = base_url($clean_url);
                             <?php foreach ($marketplace as $s): ?>
                                 <li>
                                     <a href="<?= $s['link_marketplace']; ?>" target="_blank">
-                                        <img src="<?= base_url('assets/img/logo/' . $s['logo_marketplace']); ?>" alt="<?= $s['nama_marketplace']; ?>" style="width: 20px; height: 20px; margin-right: 5px;">
+                                        <img src="<?= base_url('assets/img/logo/' . $s['logo_marketplace']); ?>" alt="<?= $s['nama_marketplace']; ?>" style="height: 20px; margin-right: 5px;">
                                         <?= $s['nama_marketplace']; ?>
                                     </a>
                                 </li>

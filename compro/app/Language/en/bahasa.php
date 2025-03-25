@@ -48,5 +48,6 @@ return [
     // ACTIVITY
     'headerActivity' => 'Our Activity',
     'captionActivity' => 'Activities We Just Did',
+    'sideActivity' => 'Related Activities',
 
 ];

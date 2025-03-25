@@ -57,7 +57,7 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
           <?php foreach ($allArticle as $article): ?>
             <div class="single-blog-item">
               <div class="single-blog-item-img">
-                <img src="<?= base_url('assets/img/artikel/' . $article["foto_artikel"]) ?>" class="card-img-top" alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>">
+                <img src="<?= base_url('assets/img/artikel/' . $article["foto_artikel"]) ?>" class="card-img-top" alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>"style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
               </div>
               <div class="single-blog-item-txt">
                 <h2><a href="<?= base_url(
@@ -93,8 +93,7 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
           </div>
           <div class="col-md-4 col-sm-12">
             <aside class="article-sidebar right-sidebar">
-              <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;">Artikel Terkait</h3>
-
+              <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;"><?= lang('bahasa.sideArtikel') ?></h3>
               <?php foreach ($sideArticle as $p): ?>
                 <div class="blog-sidebar">
                 <div class="single-blog-item-img" style="width: 80px; height: 80px; overflow: hidden; border-radius: 5px;">

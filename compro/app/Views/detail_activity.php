@@ -76,7 +76,7 @@ $background_image = 'assets/img/header.jpeg';
       <!-- Sidebar -->
       <div class="col-md-4 col-sm-12">
         <div class="act-sidebar">
-          <h3 class="mb-4">Aktivitas Lainnya</h3>
+          <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;"><?= lang('bahasa.sideActivity') ?></h3>
           <div class="activities-container">
             <?php foreach ($allAktivitas as $p): ?>
               <div class="single-act-item">

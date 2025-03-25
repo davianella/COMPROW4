@@ -249,7 +249,7 @@
                             <?php if ($index == 0) : ?> <!-- Artikel utama hanya satu -->
                                 <div class="single-blog-item">
                                     <div class="single-blog-item-img">
-                                        <img src="<?= base_url('assets/img/artikel/' . esc($item['foto_artikel'])) ?>" alt="<?= esc($item['alt_artikel_id']) ?>">
+                                        <img src="<?= base_url('assets/img/artikel/' . esc($item['foto_artikel'])) ?>" alt="<?= esc($item['alt_artikel_id']) ?>" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
                                     </div>
                                     <div class="single-blog-item-txt">
                                             <div>

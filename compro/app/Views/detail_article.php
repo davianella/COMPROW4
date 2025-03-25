@@ -52,42 +52,65 @@ $background_image = 'assets/img/header.jpeg';
 </div>
 <!-- Page Header End -->
 
-  <div class="article-container">
-    <h1 class="article-title"><?= $lang == 'id' ? $artikel['judul_artikel_id'] : $artikel['judul_artikel_en']; ?></h1>
+<div class="article-container">
+    <h1 class="article-title">
+        <?= $lang == 'id' ? $artikel['judul_artikel_id'] : $artikel['judul_artikel_en']; ?>
+    </h1>
+
     <div class="article-header">
-      <img src="<?= base_url('assets/img/artikel/' . $artikel["foto_artikel"]) ?>" class="card-img-top" alt="<?= $lang == 'id' ? $artikel['alt_artikel_id'] : $artikel['alt_artikel_en']; ?>">
+        <img src="<?= base_url('assets/img/artikel/' . $artikel["foto_artikel"]) ?>" 
+             class="card-img-top" 
+             alt="<?= $lang == 'id' ? $artikel['alt_artikel_id'] : $artikel['alt_artikel_en']; ?>">
     </div>
+
     <div class="article-body">
-      <!-- Kolom Kiri: Metadata -->
-      <aside class="article-sidebar left-sidebar">
-        <div class="article-meta">
-          <span class="meta-badge"><?= $lang == 'id' ? esc($artikel['nama_kategori_id']) : esc($artikel['nama_kategori_en']); ?></span>
-          <span class="meta-title"><?= lang('bahasa.postedBy') ?>:</span> <span> Admin</span>
-          <span class="meta-title"><?= lang('bahasa.publish_date') ?>:</span> <span> <?= date('d M Y', strtotime($artikel['updated_at'])); ?></span>
+        <!-- Kolom Kiri: Metadata -->
+        <aside class="article-sidebar left-sidebar">
+            <div class="article-meta">
+                <span class="meta-badge">
+                    <?= $lang == 'id' ? esc($artikel['nama_kategori_id']) : esc($artikel['nama_kategori_en']); ?>
+                </span>
+                <span class="meta-title"><?= lang('bahasa.postedBy') ?>:</span> <span> Admin</span>
+                <span class="meta-title"><?= lang('bahasa.publish_date') ?>:</span> 
+                <span> <?= date('d M Y', strtotime($artikel['updated_at'])); ?></span>
+            </div>
+        </aside>
+
+        <div class="article-content">
+            <p><?= $lang == 'id' ? $artikel['deskripsi_artikel_id'] : $artikel['deskripsi_artikel_en']; ?></p>
         </div>
-      </aside>
 
-      <div class="article-content">
-        <p><?= $lang == 'id' ? $artikel['deskripsi_artikel_id'] : $artikel['deskripsi_artikel_en']; ?></p>
-      </div>
+        <!-- Kolom Kanan: Artikel Sidebar -->
+        <aside class="article-sidebar right-sidebar">
+            <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;">
+                <?= lang('bahasa.sideArtikel') ?>
+            </h3>
 
-      <!-- Kolom Kanan: Artikel Sidebar -->
-      <aside class="article-sidebar right-sidebar">
-        <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;">Artikel Terkait</h3>
+            <?php foreach ($allArticle as $article): ?>
+                <div class="blog-sidebar">
+                    <div class="single-blog-item-img" 
+                         style="width: 80px; height: 80px; overflow: hidden; border-radius: 5px;">
+                        <img src="<?= base_url('assets/img/artikel/' . $article['foto_artikel']); ?>" 
+                             alt="<?= $lang == 'id' ? $article['alt_artikel_id'] : $article['alt_artikel_en']; ?>" 
+                             class="img-fluid">
+                    </div>
 
-        <?php foreach ($allArticle as $p): ?>
-          <div class="blog-sidebar">
-            <div class="single-blog-item-img">
-              <img src="<?= base_url('assets/img/artikel/' . $p["foto_artikel"]) ?>" class="card-img-top" alt="<?= $lang == 'id' ? $p['alt_artikel_id'] : $p['alt_artikel_en']; ?>" alt="blog image">
-            </div>
-            <div class="single-blog-item-txt">
-              <h4><?= $lang == 'id' ? $p['judul_artikel_id'] : $p['judul_artikel_en']; ?></h4>
-              <h6><?= date('d M Y', strtotime($p['updated_at'])); ?></h6>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      </aside>
+                    <div class="single-blog-item-txt ms-3">
+                        <h4>
+                            <a href="<?= base_url($lang == 'id'
+                                ? 'id/artikel/' . $article['slug_kategori_id'] . '/' . $article['slug_artikel_id']
+                                : 'en/article/' . $article['slug_kategori_en'] . '/' . $article['slug_artikel_en']); ?>">
+                                <?= $lang == 'id' ? $article['judul_artikel_id'] : $article['judul_artikel_en']; ?>
+                            </a>
+                        </h4>
+                        <h6 class="text-muted">
+                            <?= date('F Y', strtotime($article['created_at'])) ?>
+                        </h6>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </aside>
     </div>
-  </div>
+</div>
 
-  <?= $this->endSection(); ?>
+<?= $this->endSection(); ?>

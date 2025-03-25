@@ -47,4 +47,5 @@ return [
     // ACTIVITY
     'headerActivity' => 'Aktivitas Kami',
     'captionActivity' => 'Aktivitas yang Baru Saja Kami Lakukan',
+    'sideActivity'=> 'Aktivitas Terkait',
 ];

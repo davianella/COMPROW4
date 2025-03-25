@@ -133,7 +133,7 @@ body {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: #7b7b1a;
+    background-color: #b4b450;
     visibility: hidden;
     transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -142,6 +142,8 @@ body {
 .nav-link:hover,
 .nav-link.active {
     color: white;
+    font-size: 20px;
+    transition: width 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .nav-link:hover::before,
@@ -1161,7 +1163,7 @@ p {
 
 .single-blog-item {
     background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 10px;
+    border-radius: 30px;
     overflow: visible; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 30px;
@@ -1889,17 +1891,19 @@ p {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px; 
-    padding: 20px;
     justify-items: center;
+    padding: 60px 0;
+    max-width: 1200px;
+    margin: auto;
 }
 
 
 /* Activity Card */
 .activity-card {
     background: white;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
@@ -1907,14 +1911,6 @@ p {
 .activity-card:hover {
     transform: translateY(-5px);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.activities-grid > .activity-card:nth-child(4) {
-    grid-column: 1 / 2; 
-}
-
-.activities-grid > .activity-card:nth-child(5) {
-    grid-column: 2 / 3; 
 }
 
 /* Activity Image */
@@ -1937,10 +1933,9 @@ p {
 .activity-info {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 5px;
     font-size: 14px;
     color: #666;
-    margin-bottom: 10px;
 }
 
 .activity-date {
@@ -1952,8 +1947,10 @@ p {
     background: #7b7b1a;
     color: white;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 0 0 5px 5px;
     font-size: 12px;
+    margin-top: 0;
+
 }
 
 /* Activity Link */
@@ -1976,17 +1973,23 @@ p {
 
 
 /* Responsive Design */
+
 @media (max-width: 768px) {
     .section-title {
-        font-size: 24px;
+        font-size: 22px;
     }
     
     .activities-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .activity-card {
+        width: 90%;
     }
 
     .activity-image {
-        height: 150px;
+        height: 160px;
     }
 
     .activity-heading {
@@ -1994,49 +1997,51 @@ p {
     }
 
     .activity-info {
-        flex-direction: column;
+        flex-direction: row;
         text-align: center;
+        font-size: 13px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .section-title {
         font-size: 20px;
     }
 
     .activities-grid {
         grid-template-columns: 1fr;
-        padding: 10px;
+        padding: 20px;
     }
 
     .activity-card {
-        margin: 0 auto;
-        width: 90%;
+        width: 95%;
     }
 
     .activity-image {
-        height: 130px;
+        height: 150px;
     }
 
     .activity-heading {
-        font-size: 16px;
+        font-size: 17px;
+    }
+
+    .activity-info {
+        font-size: 12px;
     }
 
     .activity-tag {
-        font-size: 10px;
-        padding: 3px 8px;
-        margin: 1% 20%;
+        font-size: 11px;
+        padding: 4px 9px;
     }
 }
-
 /* ==========================================
    DETAIL ACT STYLING
 ========================================== */
 
 .act-sidebar {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.4);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -2518,7 +2523,7 @@ p {
 ========================================== */
 
 .left-sidebar {
-    background: white;
+    background-color: rgba(255, 255, 255, 0.4);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
