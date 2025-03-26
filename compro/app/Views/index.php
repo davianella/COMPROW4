@@ -27,9 +27,10 @@
                         <div class="carousel-caption d-flex align-items-center justify-content-center">
                             <div class="container text-center">
                                 <div class="row align-items-center justify-content-center">
-                                    <div class="col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center">                                            <img class="img-fluid animate__animated animate__zoomIn" 
+                                    <div class="col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center">                                            
+                                        <img class="img-fluid animate__animated animate__zoomIn" 
                                         src="<?= base_url('assets/img/produk/pro' . ($key + 1) . '.png') ?>" 
-                                        alt="Gambar Produk <?= $key + 1 ?>">
+                                        alt="<?= $lang === 'id' ? 'Gambar Produk ' . ($key + 1) : 'Product Image ' . ($key + 1) ?>">
                                     </div>
                                     <div class="col-lg-7">
                                         <h1 class="display-3 text-white animate__animated animate__slideInDown">
@@ -65,12 +66,12 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-5 col-md-6 col-sm-12 d-flex justify-content-center">
                                     <img class="img-fluid animate__animated animate__zoomIn" 
-                                        src="<?= base_url('assets/img/cam1.png') ?>" 
+                                        src="<?= base_url('assets/img/pro1.png') ?>" 
                                         alt="Gambar Default">
                                 </div>
                                 <div class="col-10 col-lg-7 mt-4">
                                     <h1 class="display-3 text-white mb-4 pb-3 animate__animated animate__slideInDown">
-                                        Selamat Datang di Website Kami
+                                    <?= $lang === 'id' ? 'Selamat Datang di Website Kami' : 'Welcome to Our Website' ?>
                                     </h1>
                                 </div>
                             </div>
@@ -92,9 +93,9 @@
                 <h6 class="text-primary text-uppercase text-center text-lg-start">
                     >> <?= ($lang === 'id') ? 'Tentang Kami' : 'About Us' ?> <<
                 </h6>
-                <h1 class="mb-4 text-center text-lg-start">
+                <h2 class="mb-4 text-center text-lg-start">
                     <?= esc($profil['nama_perusahaan'] ?? 'Perusahaan') ?>
-                </h1>
+                </h2>
                 <?php
                 $deskripsi = isset($profil['deskripsi_perusahaan_' . $lang]) ? $profil['deskripsi_perusahaan_' . $lang] : 'Deskripsi tidak tersedia';
                 $kalimat = preg_split('/(?<=[.!?])\s+/', $deskripsi, 4, PREG_SPLIT_NO_EMPTY);
@@ -121,8 +122,8 @@
                         alt="<?= esc($profil['alt_foto_perusahaan_' . $lang] ?? 'Company Image') ?>">
                     <div class="position-absolute top-50 start-0 translate-middle-y ms-n4 py-4 px-5 bg-dark opacity-75 text-white"
                         style="border-radius: 10px;">
-                        <h1 class="display-4 mb-0">INDONESIAN</h1>
-                        <h1 class="display-4 mb-0">EXPORTER</h1>
+                        <h2 class="display-4 mb-0">INDONESIAN</h2>
+                        <h2 class="display-4 mb-0">EXPORTER</h2>
                     </div>
                 </div>
             </div>
@@ -137,9 +138,9 @@
     <div class="row g-0">
         <div class="col-lg-3 d-none d-lg-flex">
             <div class="d-flex align-items-center justify-content-center bg-primary w-100 h-100">
-                <h1 class="display-4 text-white m-0" style="transform: rotate(-90deg);">
+                <h2 class="display-4 text-white m-0" style="transform: rotate(-90deg);">
                 <?= lang('bahasa.headerProduk') ?>
-                </h1>
+                </h2>
             </div>
         </div>
 
@@ -149,7 +150,7 @@
                 <!-- Header -->
                 <div class="text-center text-lg-start mt-2">
                     <h6 class="text-primary text-uppercase"style="text-align: left;">>><?= lang('bahasa.headerProduk') ?><<</h6>
-                    <h1 class="mb-4" style="text-align: left;"><?= lang('bahasa.captionProduk') ?></h1>
+                    <h2 class="mb-4" style="text-align: left;"><?= lang('bahasa.captionProduk') ?></h2>
                 </div>
 
                 <div class="row g-4">
@@ -188,7 +189,7 @@
 <!-- Activity Start -->
 <div id="activity" class="text-center">
     <h6 class="text-primary text-uppercase"> >><?= lang('bahasa.headerActivity') ?><< </h6>
-    <h1 class="mb-2" style="color: #61610b;"><?= lang('bahasa.captionActivity') ?></h1>
+    <h2 class="mb-2" style="color: #61610b;"><?= lang('bahasa.captionActivity') ?></h2>
 </div>
 
 <div class="activity">
@@ -238,7 +239,7 @@
     <div class="container">
         <div class="section-header text-center">
             <h6 class="text-primary text-uppercase"> >><?= lang('bahasa.headerArticle') ?><<</h6>
-            <h1 class="mb-4"><?= lang('bahasa.captionArticle') ?></h1>
+            <h2 class="mb-4"><?= lang('bahasa.captionArticle') ?></h2>
         </div>
         <div class="blog-content">
             <div class="row">
@@ -249,7 +250,8 @@
                             <?php if ($index == 0) : ?> <!-- Artikel utama hanya satu -->
                                 <div class="single-blog-item">
                                     <div class="single-blog-item-img">
-                                        <img src="<?= base_url('assets/img/artikel/' . esc($item['foto_artikel'])) ?>" alt="<?= esc($item['alt_artikel_id']) ?>" style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                                        <img src="<?= base_url('assets/img/artikel/' . esc($item['foto_artikel'])) ?>" alt="<?= esc($lang === 'id' ? $item['alt_artikel_id'] : $item['alt_artikel_en']) ?>"
+                                        style="box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
                                     </div>
                                     <div class="single-blog-item-txt">
                                             <div>

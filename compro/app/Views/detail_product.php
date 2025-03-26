@@ -28,7 +28,7 @@ $background_image = 'assets/img/header.jpeg';
 <div class="container-fluid page-header mb-5 p-0" style="background-image: url(<?= base_url($background_image) ?>);">
     <div class="container-fluid page-header-inner py-5">
         <div class="container text-center">
-            <h1 class="display-3 text-white mb-3 animated slideInDown"><?= $page_title ?></h1>
+        <h2 class="display-3 text-white mb-3 animated slideInDown" style="font-size: 40px; font-weight: bold"><?= $page_title ?></h2>
             <nav aria-label="breadcrumb">
                 <div class="breadcrumb justify-content-center text-uppercase">
                     <a href="<?= base_url() ?>"><?= lang('bahasa.home') ?></a>
@@ -54,7 +54,7 @@ $background_image = 'assets/img/header.jpeg';
 
 <div class="title-page">
     <h6 class="sub-title">>><?= $lang == 'id' ? $meta['nama_halaman_id'] : $meta['nama_halaman_en']; ?><<</h6>
-    <h1><?= $lang == 'id' ? $meta['deskripsi_halaman_id'] : $meta['deskripsi_halaman_en']; ?></h1>
+    <h1><?= esc($product['nama_produk_' . $lang] ?? $product['nama_produk_id']) ?></h1>
 </div>
 
 <div class="detproduct-detail" style="background-color:white; border-radius:20px; padding:20px;">

@@ -28,7 +28,7 @@ $background_image = 'assets/img/header.jpeg';
 <div class="container-fluid page-header mb-5 p-0" style="background-image: url(<?= base_url($background_image) ?>);">
     <div class="container-fluid page-header-inner py-5">
         <div class="container text-center">
-            <h1 class="display-3 text-white mb-3 animated slideInDown"><?= $page_title ?></h1>
+        <h2 class="display-3 text-white mb-3 animated slideInDown" style="font-size: 40px; font-weight: bold"><?= $page_title ?></h2>
             <nav aria-label="breadcrumb">
                 <div class="breadcrumb justify-content-center text-uppercase">
                     <a href="<?= base_url() ?>"><?= lang('bahasa.home') ?></a>
@@ -83,7 +83,7 @@ $background_image = 'assets/img/header.jpeg';
         <!-- Kolom Kanan: Artikel Sidebar -->
         <aside class="article-sidebar right-sidebar">
             <h3 class="mb-4" style="border-bottom: 2px solid #0a1928;">
-                <?= lang('bahasa.sideArtikel') ?>
+                <?= lang('bahasa.sideArticle') ?>
             </h3>
 
             <?php foreach ($allArticle as $article): ?>
@@ -104,7 +104,7 @@ $background_image = 'assets/img/header.jpeg';
                             </a>
                         </h4>
                         <h6 class="text-muted">
-                            <?= date('F Y', strtotime($article['created_at'])) ?>
+                        <?= date('d M Y', strtotime($artikel['updated_at'])); ?>
                         </h6>
                     </div>
                 </div>
