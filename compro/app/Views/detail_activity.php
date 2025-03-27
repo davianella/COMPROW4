@@ -84,7 +84,11 @@ $background_image = 'assets/img/header.jpeg';
                   <img src="<?= base_url('assets/img/aktivitas/' . $p["foto_aktivitas"]) ?>" class="card-img-top" alt="<?= $lang == 'id' ? $p['alt_aktivitas_id'] : $p['alt_aktivitas_en']; ?>">
                 </div>
                 <div class="single-act-item-txt">
-                  <h4><a href="#"><?= $lang == 'id' ? $p['judul_aktivitas_id'] : $p['judul_aktivitas_en']; ?></a></h4>
+                  <h4><a href="<?= base_url(
+                  $lang === 'id'
+                    ? 'id/aktivitas/' . ($p['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($p['slug_aktivitas_id'] ?? 'aktivitas-tidak-ditemukan')
+                    : 'en/activity/' . ($p['slug_kategori_en'] ?? 'category-not-found') . '/' . ($p['slug_aktivitas_en'] ?? 'activity-not-found')
+                ); ?>"><?= $lang == 'id' ? $p['judul_aktivitas_id'] : $p['judul_aktivitas_en']; ?></a></h4>
                   <h6><?= date('d M Y', strtotime($p['updated_at'])); ?></h6>
                 </div>
               </div>

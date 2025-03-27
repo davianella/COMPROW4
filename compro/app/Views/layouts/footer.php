@@ -61,7 +61,9 @@ $indonesia_url = base_url($clean_url);
 ?>
 
 <div class="fixed-buttons">
-    <a href="<?= base_url($lang . '/' . $contactLink) ?>" class="call-button"><i class="fa fa-phone"></i></a>
+    <a href="<?= esc($kontak['link_wa']) ?>" class="call-button" target="_blank">
+    <i class="fa fa-phone"></i>
+    </a>
     <button id="scroll-up-btn" class="scroll-up-button">^</button>
 </div>
 

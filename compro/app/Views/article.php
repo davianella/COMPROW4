@@ -119,7 +119,9 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
                                 </div>
                                 <div class="single-blog-item-txt ms-3">
                                     <h4>
-                                        <a href="<?= base_url('artikel/' . esc($p['slug_artikel_' . $lang] ?? $p['slug_artikel_id'])) ?>">
+                                        <a href="<?= base_url($lang == 'id'
+                                            ? 'id/artikel/' . $article['slug_kategori_id'] . '/' . $article['slug_artikel_id']
+                                            : 'en/article/' . $article['slug_kategori_en'] . '/' . $article['slug_artikel_en']); ?>">
                                             <?= esc($p['judul_artikel_' . $lang] ?? 'Judul tidak tersedia') ?>
                                         </a>
                                     </h4>

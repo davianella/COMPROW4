@@ -297,7 +297,11 @@
                                         <img src="<?= base_url('assets/img/artikel/' . esc($item['foto_artikel'])) ?>" class="img-fluid" alt="<?= esc($item['alt_artikel_' . $lang] ?? 'Gambar tidak tersedia') ?>">
                                     </div>
                                     <div class="single-blog-item-txt ms-3">
-                                        <h4><a href="<?= base_url('artikel/' . esc($item['slug_artikel_' . $lang] ?? $item['slug_artikel_id'])) ?>">
+                                        <h4><a href="<?= base_url(
+                                                $lang === 'id'
+                                                    ? 'id/artikel/' . ($item['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($item['slug_artikel_id'] ?? 'artikel-tidak-ditemukan')
+                                                    : 'en/article/' . ($item['slug_kategori_en'] ?? 'category-not-found') . '/' . ($item['slug_artikel_en'] ?? 'article-not-found')
+                                                ); ?>">
                                             <?= esc($item['judul_artikel_' . $lang] ?? 'Judul tidak tersedia') ?>
                                         </a></h4>
                                         <h6 class="text-muted"><?= date('F Y', strtotime($item['created_at'])) ?></h6>
