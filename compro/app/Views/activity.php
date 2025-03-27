@@ -57,7 +57,7 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
         <div class="activity-info">
           <p class="activity-tag"><?= $lang == 'id' ? $p['nama_kategori'] : $p['nama_kategori']; ?></p>
         </div>
-        <h5 class="activity-heading"><?= $lang == 'id' ? $p['judul_aktivitas_id'] : $p['judul_aktivitas_en']; ?></h5>
+        <h5 class="activity-heading" style="min-height: 50px;"><?= $lang == 'id' ? $p['judul_aktivitas_id'] : $p['judul_aktivitas_en']; ?></h5>
         <div class="activity-info">
           <p class="activity-date"><?= date('d M Y', strtotime($p['updated_at'])); ?></p>
         </div>
@@ -66,7 +66,7 @@ $background_image = 'assets/img/header.jpeg'; // Sesuaikan jika perlu mengganti 
                     ? 'id/aktivitas/' . ($p['slug_kategori_id'] ?? 'kategori-tidak-ditemukan') . '/' . ($p['slug_aktivitas_id'] ?? 'aktivitas-tidak-ditemukan')
                     : 'en/activity/' . ($p['slug_kategori_en'] ?? 'category-not-found') . '/' . ($p['slug_aktivitas_en'] ?? 'activity-not-found')
                 ); ?> class="article-btn w-100">
-                                            <?= lang('bahasa.buttonArticle') ?> <i class="fa fa-arrow-right"></i></a>
+        <?= lang('bahasa.buttonArticle') ?> <i class="fa fa-arrow-right"></i></a>
       </div>
     <?php endforeach; ?>
   </div>
