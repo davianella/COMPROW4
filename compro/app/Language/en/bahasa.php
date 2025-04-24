@@ -50,4 +50,20 @@ return [
     'captionActivity' => 'Activities We Just Did',
     'sideActivity' => 'Related Activities',
 
+    // FROM
+    'welcome' => 'Welcome!',
+    'message_sent' => 'Your message has been sent.',
+    'form_title' => 'Please Fill In Your Details Below and We Will Contact You Shortly!',
+    'name' => 'Name',
+    'country' => 'Country',
+    'phone' => 'Phone / WhatsApp',
+    'email' => 'Email Address',
+    'website' => 'Website (if any)',
+    'category' => 'You Are',
+    'message' => 'Leave a Message for Us',
+    'importer' => 'Importer',
+    'exporter' => 'Exporter',
+    'other' => 'Other',
+    'submit' => 'Send Message',
+
 ];

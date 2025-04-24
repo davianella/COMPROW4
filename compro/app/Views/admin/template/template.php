@@ -21,6 +21,8 @@
     <!-- test -->
     <!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script> -->
     <script src="<?= base_url('assets/admin/js/tinymce.min.js') ?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
         tinymce.init({
             selector: 'textarea.tiny',
@@ -50,6 +52,7 @@
     <script src="<?= base_url('assets') ?>/js/lazysizes.min.js"></script>
     <!--  -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
     <!-- Menambahkan class active pada navbar -->
     <script>

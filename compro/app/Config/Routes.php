@@ -21,6 +21,12 @@ $routes->get('admin/dashboard', 'admin\DashboardController::index');
 $routes->get('admin/profil/edit', 'admin\Profil::edit');
 $routes->post('admin/profil/proses_edit', 'admin\Profil::proses_edit');
 
+// ADMIN MESSAGES
+$routes->post('popup/simpan', 'MessagesController::simpan');
+$routes->get('popup', 'MessagesController::index');
+$routes->get('admin/pesan', 'admin\Pesan::index');
+$routes->get('admin/pesan/detail', 'admin\Pesan::detail');
+
 // ADMIN PRODUCTS
 $routes->get('admin/produk/index', 'admin\Produk::index');
 $routes->get('admin/produk/tambah', 'admin\Produk::tambah');

@@ -48,4 +48,20 @@ return [
     'headerActivity' => 'Aktivitas Kami',
     'captionActivity' => 'Aktivitas yang Baru Saja Kami Lakukan',
     'sideActivity'=> 'Aktivitas Terkait',
+
+    // FORM
+    'welcome' => 'Selamat datang!',
+    'message_sent' => 'Pesan berhasil dikirim.',
+    'form_title' => 'Isi Data Anda Pada Form di Bawah dan Kami Akan Menghubungi Anda Sesegera Mungkin!',
+    'name' => 'Nama',
+    'country' => 'Negara',
+    'phone' => 'No HP / WhatsApp',
+    'email' => 'Alamat Email',
+    'website' => 'Alamat Website (jika ada)',
+    'category' => 'Anda Adalah',
+    'message' => 'Tinggalkan Pesan Untuk Kami',
+    'importer' => 'Importir',
+    'exporter' => 'Eksportir',
+    'other' => 'Lainnya',
+    'submit' => 'Kirim Pesan',
 ];

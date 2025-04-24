@@ -66,3 +66,27 @@ scrollUpBtn.addEventListener('click', function() {
     document.body.scrollTop = 0; 
     document.documentElement.scrollTop = 0; 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const select = document.getElementById("negara");
+  
+    const countries = [
+      "Indonesia", "Malaysia", "Singapore", "Thailand", "Vietnam", "Philippines",
+      "China", "Japan", "India", "United States", "United Kingdom", "Germany",
+      "France", "Netherlands", "Australia", "Canada", "Brazil", "Italy",
+      "Spain", "Russia", "Mexico", "South Africa", "Turkey", "New Zealand"
+    ];
+  
+    const defaultOption = document.createElement("option");
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    select.appendChild(defaultOption);
+  
+    countries.forEach(function (country) {
+      const option = document.createElement("option");
+      option.value = country;
+      option.textContent = country;
+      select.appendChild(option);
+    });
+  });
+  

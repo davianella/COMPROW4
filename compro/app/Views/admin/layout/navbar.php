@@ -142,6 +142,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link <?= (current_url() == base_url('admin/pesan') ? 'active' : '') ?>" href="<?= base_url('admin/pesan') ?>">
+                        <span class="nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-plus" viewBox="0 0 16 16">
+                                <path d="M9.293 2.707a1 1 0 0 1 1.414 0L14 5.586V3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2.586l-3.293 2.879a1 1 0 0 1-1.414 0L8 9.586 5.707 12.464a1 1 0 0 1-1.414 0L1 9.586V13a1 1 0 0 1-1 1H0a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v2.586l3.293-2.879a1 1 0 0 1 1.414 0L8 6.414l2.293-2.707z" />
+                            </svg>
+                        </span>
+                        <span class="nav-link-text">Pesan</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link <?= (current_url() == base_url('admin/meta/index') ? 'active' : '') ?>" href="<?= base_url('admin/meta/index') ?>">
                         <span class="nav-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
